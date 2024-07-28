@@ -6,7 +6,7 @@ arrLang['pt'] = new Array();
 // Inglês
 arrLang['en']['hello']= "Hello";
 arrLang['en']['im']= "I`m Carlos";
-arrLang['en']['icreate']= "I create nice things :)";
+arrLang['en']['icreate']= "I create amazing designs for humans!";
 arrLang['en']['about']= " <b>My work is done in an integrated way with my costumers workflow.</b> Not as an outsider, but as a part of their team and working together.";
 arrLang['en']['titleBanner1']= "A Senior UX/UI,";
 arrLang['en']['titleBanner2']= "Brand and Graphic";
