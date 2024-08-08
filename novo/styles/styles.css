@@ -165,16 +165,22 @@ h5 {
   overflow: hidden; }
 
 .header {
-  width: calc(100vw - 8vw);
-  margin: 39px auto 0 auto;
+  width: calc(100vw - (8vw + 8px));
+  margin: 0 auto 0 auto;
+  margin-top: -200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; }
+  position: fixed;
+  left: 4vw;
+  z-index: 90;
+  transition: 1s; }
   .header .logo {
     width: 88px;
     height: 50px;
     display: flex; }
+    .header .logo svg {
+      fill: var(--escuro); }
   .header .menus {
     display: flex;
     align-items: center; }
@@ -196,6 +202,11 @@ h5 {
         margin-top: -30px; }
       .header .menus .link:hover .second {
         margin-top: 5px; }
+
+.headerNeon .logo svg {
+  fill: var(--neon); }
+.headerNeon .menus .link p {
+  color: var(--neon); }
 
 .defaultCTA {
   height: 50px;
@@ -224,7 +235,7 @@ h5 {
     letter-spacing: 0.5px; }
   .defaultCTA .bg {
     width: 50%;
-    height: 100%;
+    height: 120%;
     background: var(--escuro);
     position: absolute;
     left: 25%;
@@ -234,23 +245,34 @@ h5 {
   .defaultCTA:hover .label {
     margin-top: -50px; }
   .defaultCTA:hover .bg {
-    top: 0%;
-    left: -2px;
-    width: calc(100% + 4px); }
+    top: -5%;
+    left: -10px;
+    width: calc(100% + 20px); }
+
+.defaultCTANeon {
+  border: 2px solid var(--neon); }
+  .defaultCTANeon .label {
+    color: var(--neon); }
+  .defaultCTANeon .second {
+    color: var(--escuro); }
+  .defaultCTANeon .bg {
+    background: var(--neon); }
 
 .hero {
-  width: 58vw;
-  margin: 9.5vw auto 0 auto;
+  width: 100vw;
+  margin: 0 auto;
   position: relative;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding-top: 15.5vw; }
   .hero img {
     height: 10.5vw;
     position: absolute;
     left: calc(50% - 4.75vw);
     transform: rotate(13deg);
-    margin-top: -9vw;
-    z-index: 0; }
+    margin-top: -40vw;
+    z-index: 0;
+    transition: 1s; }
   .hero .smallText {
     position: absolute;
     width: 100%;
@@ -262,23 +284,37 @@ h5 {
     .hero .smallText p {
       font-size: 1.1vw;
       text-transform: uppercase;
-      font-family: "Medium_Narrow"; }
-  .hero h1 {
-    font-family: "Black_Narrow";
-    font-size: 10vw;
-    line-height: 90%;
-    text-transform: uppercase;
-    text-align: center;
-    z-index: 1;
-    position: relative; }
-    .hero h1 i {
-      font-family: "Black_Narrow_Italic"; }
+      font-family: "Medium_Narrow";
+      margin-right: 10vw;
+      opacity: 0;
+      transition: 0.5s; }
+    .hero .smallText .left {
+      margin-left: 10vw; }
+  .hero .contH2 {
+    overflow: hidden;
+    position: relative;
+    height: 9vw; }
+    .hero .contH2 h2 {
+      font-family: "Black_Narrow";
+      font-size: 10vw;
+      line-height: 90%;
+      text-transform: uppercase;
+      text-align: center;
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      margin-top: 12vw;
+      transition: 0.5s; }
+      .hero .contH2 h2 i {
+        font-family: "Black_Narrow_Italic"; }
   .hero .sub-h1 {
     font-family: "Trashhand";
     font-size: 2.1vw;
     color: var(--escuro);
     text-align: center;
-    margin-top: 2vh; }
+    margin-top: 25vh;
+    transition: 1s;
+    opacity: 0; }
   .hero .defaultCTA {
     margin: 2vh auto 0 auto;
     transform: scale(1.2); }
@@ -292,7 +328,7 @@ h5 {
     font-family: "Bold_Narrow";
     text-transform: uppercase;
     line-height: 100%;
-    width: 45vw; }
+    width: 40vw; }
     .about h2 i {
       font-family: "Bold_Narrow_Italic"; }
   .about .freehand {
@@ -350,7 +386,7 @@ h5 {
       transform: rotate(13deg);
       margin-left: 1vw; }
 
-#curveArrow {
+.curveArrow {
   height: 17vw;
   margin-right: 2vw;
   margin-top: 7vw; }
@@ -393,8 +429,7 @@ h5 {
 
 .projects {
   width: calc(100% - 8vw);
-  margin: 2vw auto 0 auto;
-  position: relative; }
+  margin: 2vw auto 0 auto; }
   .projects .headline {
     display: flex;
     flex-direction: column;
@@ -432,50 +467,109 @@ h5 {
 
 .ctaBreak {
   width: calc(100% - 20vw);
-  margin: 17vw auto;
+  margin: 0 auto;
   position: relative;
   display: flex;
-  justify-content: space-between; }
+  align-items: center;
+  flex-direction: column;
+  padding: 13vw 0 15vw 0; }
   .ctaBreak h2 {
     font-size: 10vw;
     font-family: "Black_Narrow";
     text-transform: uppercase;
     line-height: 100%;
-    width: 29vw; }
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 1vw; }
   .ctaBreak img {
     width: 20vw;
-    margin-left: -4vw;
-    transform: rotate(8deg); }
-  .ctaBreak .finalColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25vw;
-    align-items: flex-start;
-    height: 17vw; }
-    .ctaBreak .finalColumn .call {
-      font-family: "Medium_Narrow";
-      font-size: 2.3vw; }
-    .ctaBreak .finalColumn .defaultCTA {
-      transform: scale(1.5);
-      transform-origin: left; }
+    transform: rotate(8deg);
+    margin-bottom: -1vw;
+    z-index: 0; }
+  .ctaBreak .call {
+    font-family: "Medium_Narrow";
+    font-size: 2.3vw;
+    margin-bottom: 3vw; }
+  .ctaBreak .defaultCTA {
+    transform: scale(1.5);
+    transform-origin: center; }
 
 .bgServices {
-  width: 100vw;
-  height: 1000px;
-  background-color: var(--escuro); }
+  background-color: var(--escuro);
+  height: 280vh; }
+  .bgServices .sticky {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 100vh; }
+    .bgServices .sticky .scrollSection {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 280vw;
+      will-change: transform;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4vw; }
+      .bgServices .sticky .scrollSection .boxes {
+        width: 50vw;
+        height: 75%;
+        border: 2px solid var(--neon);
+        position: relative;
+        padding: 3vw; }
+        .bgServices .sticky .scrollSection .boxes:first-child {
+          border: 0; }
+        .bgServices .sticky .scrollSection .boxes h3 {
+          font-family: "Black_Narrow";
+          color: var(--neon);
+          text-transform: uppercase;
+          font-family: "Black_Narrow";
+          color: var(--neon);
+          line-height: 90%;
+          font-size: 10vw; }
+        .bgServices .sticky .scrollSection .boxes p {
+          font-family: "Medium_Narrow";
+          color: var(--neon);
+          font-size: 1.8vw;
+          margin-top: 2vw;
+          width: 50%; }
+      .bgServices .sticky .scrollSection .headlines {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        .bgServices .sticky .scrollSection .headlines .freehand {
+          font-family: "Trashhand";
+          font-size: 2vw;
+          margin-bottom: 2vw;
+          color: var(--neon); }
+        .bgServices .sticky .scrollSection .headlines h2 {
+          font-family: "Black_Narrow";
+          font-size: 4.5vw;
+          line-height: 90%;
+          color: #fff;
+          text-transform: uppercase;
+          width: 80%; }
+          .bgServices .sticky .scrollSection .headlines h2 i {
+            font-family: "Medium_Narrow"; }
+        .bgServices .sticky .scrollSection .headlines .curveArrow {
+          position: absolute;
+          right: 5%;
+          bottom: -10%;
+          transform: rotate(-82deg); }
 
 .bgClients {
   width: calc(100% - 8vw);
-  margin: 10vw auto 0 auto;
+  margin: 0 auto;
   position: relative;
-  display: flex;
-  justify-content: space-between; }
+  padding-top: 10vw;
+  overflow: hidden; }
   .bgClients .headline {
     width: 40%;
     display: flex;
     align-items: baseline;
-    flex-direction: column; }
+    flex-direction: column;
+    float: left; }
     .bgClients .headline h2 {
       line-height: 90%;
       margin: 0 auto;
@@ -497,7 +591,8 @@ h5 {
   .bgClients .gridLogos {
     width: 55%;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    float: right; }
     .bgClients .gridLogos div {
       width: 33.3333%;
       height: 12vw;
@@ -510,25 +605,25 @@ h5 {
         width: 50%;
         height: 20%; }
 
-.footer {
+.bgFooter {
   width: 100vw;
   margin-top: 10vw;
   position: relative;
   padding-top: 10vw; }
-  .footer .bannerVideo {
+  .bgFooter .bannerVideo {
     width: 100vw;
     position: absolute;
     z-index: 0;
     left: 0;
     top: 0; }
-  .footer .headline {
+  .bgFooter .headline {
     width: 70vw;
     position: relative;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .footer .headline h2 {
+    .bgFooter .headline h2 {
       color: var(--neon);
       font-family: "Black_Narrow";
       line-height: 90%;
@@ -536,37 +631,39 @@ h5 {
       z-index: 1;
       text-transform: uppercase;
       font-size: 10.5vw; }
-    .footer .headline .box {
+    .bgFooter .headline .box {
       background: var(--red);
       padding: 0.6vw 1.2vw;
       margin-top: -1vw;
       transform: rotate(-4deg);
       z-index: 1;
       position: relative; }
-      .footer .headline .box .freehand {
+      .bgFooter .headline .box .freehand {
         font-size: 2vw;
         font-family: "Trashhand";
         text-align: center;
         margin: 0 auto;
         display: block; }
-    .footer .headline .defaultCTA {
+    .bgFooter .headline .defaultCTA {
       transform: scale(2);
       margin-top: 3vw; }
-  .footer .ctas {
+  .bgFooter .ctas {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 4vw;
     position: relative;
     z-index: 3; }
-    .footer .ctas .lastContact {
+    .bgFooter .ctas .lastContact {
       font-family: "Bold_Narrow";
       color: var(--neon);
       font-size: 1.6vw;
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 1.5vw; }
-  .footer .copyright {
+      .bgFooter .ctas .lastContact:hover {
+        text-decoration: underline; }
+  .bgFooter .copyright {
     width: calc(100% - 8vw);
     margin: 3vw auto 0 auto;
     display: flex;
@@ -574,28 +671,32 @@ h5 {
     align-items: center;
     position: relative;
     z-index: 3; }
-    .footer .copyright .copyLeft {
+    .bgFooter .copyright .copyLeft {
       font-size: 20px;
       font-family: "Medium_Narrow";
       color: #fff;
       text-transform: uppercase;
       font-size: 18px; }
-    .footer .copyright .social {
+    .bgFooter .copyright .social {
       display: flex;
       align-items: center; }
-      .footer .copyright .social p {
+      .bgFooter .copyright .social p {
         font-size: 20px;
         font-family: "Medium_Narrow";
         color: #fff;
         text-transform: uppercase;
         font-size: 18px;
         margin-right: 1vw; }
-      .footer .copyright .social a {
+      .bgFooter .copyright .social a {
         width: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-left: 1vw; }
+        .bgFooter .copyright .social a svg {
+          fill: #fff; }
+        .bgFooter .copyright .social a:hover svg {
+          fill: var(--neon); }
 
 .banner {
   width: 100vw;

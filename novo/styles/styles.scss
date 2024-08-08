@@ -239,17 +239,25 @@ h5 {
 }
 
 .header {
-    width: calc(100vw - 8vw);
-    margin: 39px auto 0 auto;
+    width: calc(100vw - (8vw + 8px));
+    margin: 0 auto 0 auto;
+    margin-top: -200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    left: 4vw;
+    z-index: 90;
+    transition: 1s;
 
     .logo {
         width: 88px;
         height: 50px;
         display: flex;
+
+        svg {
+            fill: var(--escuro);
+        }
     }
 
     .menus {
@@ -288,6 +296,22 @@ h5 {
     }
 }
 
+.headerNeon {
+    .logo {
+        svg {
+            fill: var(--neon);
+        }
+    }
+
+    .menus {
+        .link {
+            p {
+                color: var(--neon);
+            }
+        }
+    }
+}
+
 .defaultCTA {
     height: 50px;
     border-radius: 90px;
@@ -320,7 +344,7 @@ h5 {
 
     .bg {
         width: 50%;
-        height: 100%;
+        height: 120%;
         background: var(--escuro);
         position: absolute;
         left: 25%;
@@ -335,27 +359,45 @@ h5 {
         }
 
         .bg {
-            top: 0%;
-            left: -2px;
-            width: calc(100% + 4px);
+            top: -5%;
+            left: -10px;
+            width: calc(100% + 20px);
         }
     }
 }
 
+.defaultCTANeon {
+    border: 2px solid var(--neon);
+
+    .label {
+        color: var(--neon);
+    }
+
+    .second {
+        color: var(--escuro);
+    }
+
+    .bg {
+        background: var(--neon);
+    }
+}
+
 .hero {
-    width: 58vw;
-    margin: 9.5vw auto 0 auto;
+    width: 100vw;
+    margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: column;
+    padding-top: 15.5vw;
 
     img {
         height: 10.5vw;
         position: absolute;
         left: calc(50% - 4.75vw);
         transform: rotate(13deg);
-        margin-top: -9vw;
+        margin-top: -40vw;
         z-index: 0;
+        transition: 1s;
     }
 
     .smallText {
@@ -371,30 +413,48 @@ h5 {
             font-size: 1.1vw;
             text-transform: uppercase;
             font-family: "Medium_Narrow";
+            margin-right: 10vw;
+            opacity: 0;
+            transition: 0.5s;
+        }
 
+        .left {
+            margin-left: 10vw;
         }
     }
 
-    h1 {
-        font-family: "Black_Narrow";
-        font-size: 10vw;
-        line-height: 90%;
-        text-transform: uppercase;
-        text-align: center;
-        z-index: 1;
+    .contH2 {
+        overflow: hidden;
         position: relative;
+        height: 9vw;
 
-        i {
-            font-family: "Black_Narrow_Italic";
+        h2 {
+            font-family: "Black_Narrow";
+            font-size: 10vw;
+            line-height: 90%;
+            text-transform: uppercase;
+            text-align: center;
+            z-index: 1;
+            position: absolute;
+            width: 100%;
+            margin-top: 12vw;
+            transition: 0.5s;
+
+            i {
+                font-family: "Black_Narrow_Italic";
+            }
         }
     }
+
 
     .sub-h1 {
         font-family: "Trashhand";
         font-size: 2.1vw;
         color: var(--escuro);
         text-align: center;
-        margin-top: 2vh;
+        margin-top: 25vh;
+        transition: 1s;
+        opacity: 0;
     }
 
     .defaultCTA {
@@ -413,8 +473,9 @@ h5 {
         font-family: "Bold_Narrow";
         text-transform: uppercase;
         line-height: 100%;
-        width: 45vw;
+        width: 40vw;
 
+        // padding-left: 40vw;
         i {
             font-family: "Bold_Narrow_Italic";
         }
@@ -498,7 +559,7 @@ h5 {
 
 
 // CURVE ARROW============================
-#curveArrow {
+.curveArrow {
     height: 17vw;
     margin-right: 2vw;
     margin-top: 7vw;
@@ -557,6 +618,8 @@ h5 {
     }
 }
 
+// END CURVE ARROW============================
+
 .svg-elem-2 {
     -webkit-animation: animate-svg-stroke-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
     animation: animate-svg-stroke-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
@@ -566,8 +629,6 @@ h5 {
 .projects {
     width: calc(100% - 8vw);
     margin: 2vw auto 0 auto;
-    position: relative;
-
     .headline {
         display: flex;
         flex-direction: column;
@@ -617,64 +678,144 @@ h5 {
 
 .ctaBreak {
     width: calc(100% - 20vw);
-    margin: 17vw auto;
+    margin: 0 auto;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 13vw 0 15vw 0;
 
     h2 {
         font-size: 10vw;
         font-family: "Black_Narrow";
         text-transform: uppercase;
         line-height: 100%;
-        width: 29vw;
+        z-index: 1;
+        text-align: center;
+        margin-bottom:1vw;
     }
 
     img {
         width: 20vw;
-        margin-left: -4vw;
         transform: rotate(8deg);
+        margin-bottom: -1vw;
+        z-index: 0;
     }
 
-    .finalColumn {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 25vw;
-        align-items: flex-start;
-        height: 17vw;
+    .call {
+        font-family: "Medium_Narrow";
+        font-size: 2.3vw;
+        margin-bottom: 3vw;
+    }
 
-        .call {
-            font-family: "Medium_Narrow";
-            font-size: 2.3vw;
-        }
-
-        .defaultCTA {
-            transform: scale(1.5);
-            transform-origin: left;
-        }
+    .defaultCTA {
+        transform: scale(1.5);
+        transform-origin: center;
     }
 }
 
 .bgServices {
-    width: 100vw;
-    height: 1000px;
     background-color: var(--escuro);
+    height: 280vh;
+
+    .sticky {
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+        // background: red;
+        height: 100vh;
+
+        .scrollSection {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 280vw;
+            will-change: transform;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4vw;
+
+            .boxes {
+                width: 50vw;
+                height: 75%;
+                border: 2px solid var(--neon);
+                position: relative;
+                padding: 3vw;
+
+                &:first-child {
+                    border: 0;
+                }
+
+                h3 {
+                    font-family: "Black_Narrow";
+                    color: var(--neon);
+                    text-transform: uppercase;
+                    font-family: "Black_Narrow";
+                    color: var(--neon);
+                    line-height: 90%;
+                    font-size: 10vw;
+                }
+
+                p {
+                    font-family: "Medium_Narrow";
+                    color: var(--neon);
+                    font-size: 1.8vw;
+                    margin-top: 2vw;
+                    width: 50%;
+                }
+            }
+
+            .headlines {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .freehand {
+                    font-family: "Trashhand";
+                    font-size: 2vw;
+                    margin-bottom: 2vw;
+                    color: var(--neon);
+                }
+
+                h2 {
+                    font-family: "Black_Narrow";
+                    font-size: 4.5vw;
+                    line-height: 90%;
+                    color: #fff;
+                    text-transform: uppercase;
+                    width: 80%;
+
+                    i {
+                        font-family: "Medium_Narrow";
+                    }
+                }
+
+                .curveArrow {
+                    position: absolute;
+                    right: 5%;
+                    bottom: -10%;
+                    // stroke: #fff;
+                    transform: rotate(-82deg);
+                }
+            }
+        }
+    }
+
 }
 
 .bgClients {
     width: calc(100% - 8vw);
-    margin: 10vw auto 0 auto;
+    margin: 0 auto;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-
+    padding-top: 10vw;
+    overflow: hidden;
     .headline {
         width: 40%;
         display: flex;
         align-items: baseline;
         flex-direction: column;
-
+        float: left;
         h2 {
             line-height: 90%;
             margin: 0 auto;
@@ -704,7 +845,7 @@ h5 {
         width: 55%;
         display: flex;
         flex-wrap: wrap;
-
+        float: right;
         div {
             width: 33.3333%;
             height: 12vw;
@@ -722,7 +863,7 @@ h5 {
     }
 }
 
-.footer {
+.bgFooter {
     width: 100vw;
     margin-top: 10vw;
     position: relative;
@@ -792,6 +933,11 @@ h5 {
             text-align: center;
             text-transform: uppercase;
             margin-bottom: 1.5vw;
+
+            &:hover {
+                text-decoration: underline;
+
+            }
         }
 
     }
@@ -816,6 +962,7 @@ h5 {
         .social {
             display: flex;
             align-items: center;
+
             p {
                 font-size: 20px;
                 font-family: "Medium_Narrow";
@@ -824,12 +971,23 @@ h5 {
                 font-size: 18px;
                 margin-right: 1vw;
             }
-            a{
+
+            a {
                 width: 28px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-left: 1vw;
+
+                svg {
+                    fill: #fff;
+                }
+
+                &:hover {
+                    svg {
+                        fill: var(--neon);
+                    }
+                }
             }
         }
     }
