@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const text = heading.textContent;
     let aboutTextTriggerSpace = window.innerHeight * 0.70;
     heading.textContent = ''; // Limpa o texto original
-    const menuLinks = document.querySelectorAll('.header .menus .link');
+    const menuLinks = document.querySelectorAll('a');
 
     function typeLetter() {
         text.split('').forEach((char, index) => {
@@ -223,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', checkScroll);
 
-
     menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault(); // Previne o comportamento padrão do link
@@ -239,3 +238,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Obtém o elemento p pelo seu ID
+const currentYearElement = document.getElementById('currentYear');
+
+// Cria um novo objeto Date
+const currentYear = new Date().getFullYear();
+
+// Define o texto do elemento p com o ano atual
+currentYearElement.textContent = currentYear;

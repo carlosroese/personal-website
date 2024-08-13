@@ -783,10 +783,20 @@ h5 {
       font-family: "Medium_Narrow";
       color: #fff;
       text-transform: uppercase;
-      font-size: 18px; }
+      font-size: 18px;
+      width: 30%; }
+      .bgFooter .copyright .copyLeft span {
+        font-family: "Medium_Narrow"; }
+    .bgFooter .copyright .backTop {
+      font-size: 1vw;
+      color: var(--neon);
+      font-family: "Medium_Narrow";
+      text-align: center;
+      text-transform: uppercase; }
     .bgFooter .copyright .social {
+      width: 30%;
       display: flex;
-      align-items: center; }
+      justify-content: end; }
       .bgFooter .copyright .social p {
         font-size: 20px;
         font-family: "Medium_Narrow";

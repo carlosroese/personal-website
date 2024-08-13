@@ -1105,11 +1105,22 @@ h5 {
             color: #fff;
             text-transform: uppercase;
             font-size: 18px;
+            width: 30%;
+            span{
+                font-family: "Medium_Narrow";
+            }
         }
-
+        .backTop{
+            font-size: 1vw;
+            color: var(--neon);
+            font-family: "Medium_Narrow";
+            text-align: center;
+            text-transform: uppercase;
+        }
         .social {
+            width: 30%;
             display: flex;
-            align-items: center;
+            justify-content: end;
 
             p {
                 font-size: 20px;
