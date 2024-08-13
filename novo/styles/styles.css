@@ -84,7 +84,7 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   background-color: var(--neon); }
   html::-webkit-scrollbar {
@@ -150,6 +150,48 @@ svg {
 
 .overflow {
   overflow: hidden; }
+
+.startAnimation {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--escuro); }
+  .startAnimation .logoSpace {
+    width: 350px;
+    position: relative;
+    height: 86px;
+    transition: 2.5s;
+    left: calc(50% - 150px);
+    top: calc(50% - 43px); }
+    .startAnimation .logoSpace .pathLeft {
+      position: absolute;
+      width: 86px;
+      fill: var(--neon);
+      opacity: 0;
+      transition: 0.8s;
+      left: 0; }
+    .startAnimation .logoSpace .pathRight {
+      position: absolute;
+      width: 86px;
+      fill: var(--neon);
+      right: 0px;
+      top: 22px;
+      opacity: 0;
+      transition: 0.8s; }
+    .startAnimation .logoSpace .pathLeftActive {
+      opacity: 1;
+      left: calc(50% - 70px); }
+    .startAnimation .logoSpace .pathRightActive {
+      opacity: 1;
+      right: calc(50% - 70px); }
+  .startAnimation .logoSpaceActive {
+    transform: scale(392) rotate(-15deg);
+    transform-origin: center;
+    margin-left: 721vh;
+    margin-top: -218vh; }
 
 .header {
   width: calc(100vw - (8vw + 8px));
@@ -256,7 +298,8 @@ svg {
   display: flex;
   flex-direction: column;
   padding-top: 15.5vw;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  z-index: 1; }
   .hero img {
     height: 10.5vw;
     position: absolute;
@@ -322,7 +365,8 @@ svg {
   width: calc(100% - 8vw);
   margin: 13vw auto 0 auto;
   padding-top: 7vw;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   .about h2 {
     font-size: 2.8vw;
     text-transform: uppercase;
@@ -452,7 +496,9 @@ svg {
 .projects {
   width: calc(100% - 8vw);
   margin: 0 auto 0 auto;
-  padding-top: 5vw; }
+  padding-top: 5vw;
+  position: relative;
+  z-index: 1; }
   .projects .headline {
     display: flex;
     flex-direction: column;
@@ -673,7 +719,8 @@ svg {
   margin: 0 auto;
   position: relative;
   padding-top: 10vw;
-  display: ruby-text; }
+  display: ruby-text;
+  z-index: 1; }
   .bgClients .headline {
     width: 40%;
     position: sticky;
@@ -726,15 +773,18 @@ svg {
   width: 100vw;
   margin-top: 10vw;
   position: relative;
-  padding-top: 10vw; }
+  padding-top: 8vw;
+  height: 100vh; }
   .bgFooter .bannerVideo {
     width: 100vw;
     position: absolute;
     z-index: 0;
     left: 0;
-    top: 0; }
+    top: 0;
+    height: 101vh;
+    object-fit: cover; }
   .bgFooter .headline {
-    width: 70vw;
+    width: 50vw;
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -747,7 +797,7 @@ svg {
       text-align: center;
       z-index: 1;
       text-transform: uppercase;
-      font-size: 10.5vw; }
+      font-size: 7.5vw; }
     .bgFooter .headline .box {
       background: var(--red);
       padding: 0.6vw 1.2vw;
@@ -771,24 +821,28 @@ svg {
     flex-direction: column;
     margin-top: 4vw;
     position: relative;
-    z-index: 3; }
+    z-index: 3;
+    -webkit-font-smoothing: antialiased; }
     .bgFooter .ctas .lastContact {
       font-family: "Bold_Narrow";
       color: var(--neon);
       font-size: 1.6vw;
       text-align: center;
       text-transform: uppercase;
-      margin-bottom: 1.5vw; }
+      margin-bottom: 1.2vw; }
       .bgFooter .ctas .lastContact:hover {
         text-decoration: underline; }
   .bgFooter .copyright {
     width: calc(100% - 8vw);
-    margin: 3vw auto 0 auto;
+    margin: 2vw auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 3; }
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 4vw; }
     .bgFooter .copyright .copyLeft {
       font-family: "Medium_Narrow";
       color: #fff;

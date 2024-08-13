@@ -4,7 +4,7 @@ window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
-$('html').css("overflow-y", "hidden");
+// $('html').css("overflow-y", "hidden");
 
 
 
@@ -35,45 +35,61 @@ $(document).ready(function () {
     var skew = function () {
         $('html').css("overflow-y", "auto");
     };
-    setTimeout(skew, 0);
+    setTimeout(skew, 3000);
+
+    var startLogoLetters = function () {
+        $('.startAnimation .logoSpace .pathLeft').addClass("pathLeftActive");
+        $('.startAnimation .logoSpace .pathRight').addClass("pathRightActive");
+    };
+    setTimeout(startLogoLetters, 200);
+
+    var startLogoAnimation = function () {
+        $('.startAnimation .logoSpace').addClass("logoSpaceActive");
+    };
+    setTimeout(startLogoAnimation, 1000);
+
+    var startLogoHide = function () {
+        $('.startAnimation').css("display","none");
+    };
+    setTimeout(startLogoHide, 2500);
 
     var headerShows = function () {
         $('.header').addClass("headerAtive");
     };
-    setTimeout(headerShows, 0);
+    setTimeout(headerShows, 1200);
 
     var smallPreHeaders = function () {
         $('.hero .smallText p').addClass("preHeaderActive");
         $('.hero .smallText .left').addClass("leftActive");
         $('.hero .smallText .right').addClass("rightActive");
     };
-    setTimeout(smallPreHeaders, 1000);
+    setTimeout(smallPreHeaders, 2000);
 
     var headline1 = function () {
         $('.hero .step1 h2').css("margin-top", "0px");
     };
-    setTimeout(headline1, 400);
+    setTimeout(headline1, 1700);
 
     var headline2 = function () {
         $('.hero .step2 h2').css("margin-top", "0px");
     };
-    setTimeout(headline2, 500);
+    setTimeout(headline2, 1800);
 
     var headline3 = function () {
         $('.hero .step3 h2').css("margin-top", "0px");
     };
-    setTimeout(headline3, 600);
+    setTimeout(headline3, 1900);
 
     var subH1 = function () {
         $('.hero .sub-h1').css("margin-top", "2vw");
         $('.hero .sub-h1').css("opacity", "1");
     };
-    setTimeout(subH1, 1000);
+    setTimeout(subH1, 2000);
 
     var avatar = function () {
         $('.hero img').css("margin-top", "-9vw");
     };
-    setTimeout(avatar, 1000);
+    setTimeout(avatar, 2300);
 
     $(window).scroll(function () {
         var scrollval = $(this).scrollTop();    // It will return scroll value
@@ -101,7 +117,7 @@ $(document).ready(function () {
             $('.header .defaultCTA').removeClass('defaultCTANeon');
         }
 
-        if (scrollval > anchorFooter) {
+        if (scrollval >= anchorFooter) {
             $('.header').addClass('headerNeon');
             $('.header .defaultCTA').addClass('defaultCTANeon');
         }
