@@ -190,7 +190,7 @@ svg {
   .startAnimation .logoSpaceActive {
     transform: scale(392) rotate(-15deg);
     transform-origin: center;
-    margin-left: 721vh;
+    margin-left: 821vh;
     margin-top: -218vh; }
 
 .header {
@@ -756,7 +756,8 @@ svg {
   .bgClients .gridLogos {
     width: 55%;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    float: right; }
     .bgClients .gridLogos div {
       width: 33.3333%;
       height: 12vw;

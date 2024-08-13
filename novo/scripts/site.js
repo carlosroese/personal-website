@@ -46,12 +46,12 @@ $(document).ready(function () {
     var startLogoAnimation = function () {
         $('.startAnimation .logoSpace').addClass("logoSpaceActive");
     };
-    setTimeout(startLogoAnimation, 1000);
+    setTimeout(startLogoAnimation, 1200);
 
     var startLogoHide = function () {
         $('.startAnimation').css("display","none");
     };
-    setTimeout(startLogoHide, 2500);
+    setTimeout(startLogoHide, 2900);
 
     var headerShows = function () {
         $('.header').addClass("headerAtive");

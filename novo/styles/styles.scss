@@ -267,7 +267,7 @@ svg {
     .logoSpaceActive {
         transform: scale(392) rotate(-15deg);
         transform-origin: center;
-        margin-left: 721vh;
+        margin-left: 821vh;
         margin-top: -218vh;
     }
 }
@@ -1061,7 +1061,7 @@ svg {
         width: 55%;
         display: flex;
         flex-wrap: wrap;
-
+        float: right;
         div {
             width: 33.3333%;
             height: 12vw;
