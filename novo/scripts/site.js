@@ -12,12 +12,12 @@ $('html').css("overflow-y", "hidden");
 const stickySections = [...document.querySelectorAll('.sticky')]
 
 window.addEventListener('scroll', (e) => {
-    for(let i = 0; i < stickySections.length; i++){
+    for (let i = 0; i < stickySections.length; i++) {
         transform(stickySections[i])
     }
 })
 
-function transform(section){
+function transform(section) {
     const offsetTop = section.parentElement.offsetTop;
     const scrollSection = section.querySelector('.scrollSection')
 
@@ -38,16 +38,16 @@ $(document).ready(function () {
     setTimeout(skew, 0);
 
     var headerShows = function () {
-        $('.header').css("margin-top", "39px");
+        $('.header').addClass("headerAtive");
     };
     setTimeout(headerShows, 0);
 
     var smallPreHeaders = function () {
-        $('.hero .smallText p').css("margin-right", "22vw");
-        $('.hero .smallText .left').css("margin-left", "22vw");
-        $('.hero .smallText p').css("opacity", "1");
+        $('.hero .smallText p').addClass("preHeaderActive");
+        $('.hero .smallText .left').addClass("leftActive");
+        $('.hero .smallText .right').addClass("rightActive");
     };
-    setTimeout(smallPreHeaders, 1000);  
+    setTimeout(smallPreHeaders, 1000);
 
     var headline1 = function () {
         $('.hero .step1 h2').css("margin-top", "0px");
@@ -65,7 +65,7 @@ $(document).ready(function () {
     setTimeout(headline3, 600);
 
     var subH1 = function () {
-        $('.hero .sub-h1').css("margin-top", "1vw");
+        $('.hero .sub-h1').css("margin-top", "2vw");
         $('.hero .sub-h1').css("opacity", "1");
     };
     setTimeout(subH1, 1000);
@@ -75,11 +75,12 @@ $(document).ready(function () {
     };
     setTimeout(avatar, 1000);
 
-    
+
 
 
     $(window).scroll(function () {
         var scrollval = $(this).scrollTop();    // It will return scroll value
+        var anchorAbout = $('.about').offset().top;
         var anchorServices = $('.bgServices').offset().top;
         var anchorClients = $('.bgClients').offset().top;
         var anchorCtaBreak = $('.ctaBreak').offset().top;
@@ -90,23 +91,23 @@ $(document).ready(function () {
         if (scrollval < anchorServices) {
             $('.header').removeClass('headerNeon');
             $('.header .defaultCTA').removeClass('defaultCTANeon');
-        } 
+        }
 
         if (scrollval >= anchorServices) {
             $('.header').addClass('headerNeon');
             $('.header .defaultCTA').addClass('defaultCTANeon');
-        } 
+        }
 
         if (scrollval > anchorClients) {
             $('.header').removeClass('headerNeon');
             $('.header .defaultCTA').removeClass('defaultCTANeon');
-        } 
-        
+        }
+
         if (scrollval > anchorFooter) {
             $('.header').addClass('headerNeon');
             $('.header .defaultCTA').addClass('defaultCTANeon');
         }
-        
+
         //Hero Headlines as you scroll
         $(".hero .step1").css("margin-left", - (scrollval / 1) + 'px');
         $(".hero .step2").css("margin-right", - (scrollval / 1) + 'px');
@@ -115,80 +116,126 @@ $(document).ready(function () {
 
         //About Section Animations as you scroll
         $(".about .big15Years .myPicture").css("top", (0 - (scrollval / 2)) + 'px');
+        let tenVh = window.innerHeight * 0.70;
+        if (scrollval >= (anchorAbout + tenVh)) {
+            $(".curveArrow svg").css("display", 'block');
+        }
 
-        //CTA Break gets sticky
-        // if (scrollval >= anchorCtaBreak) {
-        //     $('.ctaBreak').css("position", 'fixed');;
-        // } 
+
+        //SERVICES ANIMATIONS AS SCROLL
+        if (scrollval >= anchorServices) {
+            $('.bgServices .curveArrow').css("display", 'block');
+        }
 
 
+        //CTA Break Animations
+        if (scrollval >= (anchorCtaBreak - 300)) {
+
+            $(".ctaBreak").css("margin-bottom", (anchorCtaBreak - (scrollval)) + 'px');
+
+            var gifExplode = function () {
+                $('.ctaBreak .gif1').addClass('gif1Active');
+                $('.ctaBreak .gif2').addClass('gif2Active');
+                $('.ctaBreak .gif3').addClass('gif3Active');
+                $('.ctaBreak .gif4').addClass('gif4Active');
+            };
+            setTimeout(gifExplode, 1300);
+
+            var ctaBreakHead3 = function () {
+                $('.ctaBreak .freehand').addClass('freehandActive');
+            };
+            setTimeout(ctaBreakHead3, 0);
+
+            var ctaBreakHead1 = function () {
+                $('.ctaBreak .mask .head1').addClass("h2Active");
+            };
+            setTimeout(ctaBreakHead1, 200);
+
+            var ctaBreakHead2 = function () {
+                $('.ctaBreak .mask .head2').addClass("h2Active");
+            };
+            setTimeout(ctaBreakHead2, 400);
+
+            var ctaBreakHead3 = function () {
+                $('.ctaBreak .mask .head3').addClass("h2Active");
+            };
+            setTimeout(ctaBreakHead3, 600);
+
+            var ctaBreakButton = function () {
+                $('.ctaBreak .defaultCTA').addClass("defaultCTAActive");
+            };
+            setTimeout(ctaBreakButton, 800);
+
+        } else {
+            $('.ctaBreak .gif1').removeClass('gif1Active');
+            $('.ctaBreak .gif2').removeClass('gif2Active');
+            $('.ctaBreak .gif3').removeClass('gif3Active');
+            $('.ctaBreak .gif4').removeClass('gif4Active');
+            $('.ctaBreak .freehand').removeClass('freehandActive');
+            $('.ctaBreak .mask .head1').removeClass("h2Active");
+            $('.ctaBreak .mask .head2').removeClass("h2Active");
+            $('.ctaBreak .mask .head3').removeClass("h2Active");
+            $('.ctaBreak .defaultCTA').removeClass("defaultCTAActive");
+        }
+        //Footer Animations
     });
 });
 
 var elem = document.querySelector('.myPicture');
-window.addEventListener('scroll', function() {
-	var value = window.scrollY * 0.015;
-	elem.style.transform = `translatex(0%) translatey(0%) rotate(${value}deg)`; 
+window.addEventListener('scroll', function () {
+    var value = window.scrollY * 0.015;
+    elem.style.transform = `translatex(0%) translatey(0%) rotate(${value}deg)`;
 });
 
-// function fixedCases() {
-//     var window_top = $(window).scrollTop();
-//     var ancorText = $('#ancorText').offset().top;
-//     var alturaText = $('.inicialText').height();
-//     var ancorCase = $('#ancorCase').offset().top;
-//     var alturaCase = $('.bgCase').height();
-//     var ancorCase2 = $('#ancorCase2').offset().top;
-//     var alturaCase2 = $('.bgCase2').height();
-//     var ancorCase3 = $('#ancorCase3').offset().top;
-//     var alturaCase3 = $('.bgCase3').height();
-//     // console.log(alturaCase);
-//     if (window_top > ancorText) {
-//         $('.inicialText').addClass('initialTextFixed');
-//         $('#ancorCase').css("margin-top", alturaText + "px");
-//     } else {
-//         $('.inicialText').removeClass('initialTextFixed');
-//         $('#ancorCase').css("margin-top", "0");
-//     }
 
-//     if (window_top >= ancorCase) {
-//         $('.bgCase').addClass('bgCaseFixed');
-//         $('#ancorCase2').css("margin-top", alturaCase + alturaText);
-//     } else {
-//         $('.bgCase').removeClass('bgCaseFixed');
-//         $('#ancorCase2').css("margin-top", "0");
-//     }
 
-//     if (window_top > ancorCase2) {
-//         $('.bgCase2').addClass('bgCaseFixed');
-//         $('#ancorCase3').css("margin-top", alturaCase + alturaCase2 + alturaText);
-//     } else {
-//         $('.bgCase2').removeClass('bgCaseFixed');
-//         $('#ancorCase3').css("margin-top", "0");
-//     }
 
-//     if (window_top > ancorCase3) {
-//         $('.bgCase3').addClass('bgCaseFixed');
-//         $('.bgProcess').css("margin-top", alturaCase + alturaCase2 + alturaCase3 + alturaText);
-//     } else {
-//         $('.bgCase3').removeClass('bgCaseFixed');
-//         $('.bgProcess').css("margin-top", "0");
-//     }
 
-// }
 
-// $(window).scroll(function () {
-//     fixedCases();
-// });
+//ABOUT TEXT LETTERS ANIMATION
+document.addEventListener('DOMContentLoaded', function () {
+    const heading = document.getElementById('animatedText');
+    const container = document.getElementById('aboutMe');
+    const text = heading.textContent;
+    let aboutTextTriggerSpace = window.innerHeight * 0.70;
+    heading.textContent = ''; // Limpa o texto original
+    const menuLinks = document.querySelectorAll('.header .menus .link');
 
-// function moveImgCases() {
-//     var window_top = $(window).scrollTop();
-//     var ancorCase1 = $('.bgCase').offset().top;
-//     if (window_top > ancorCase1) {
-//         $('.bgCase .imgWeb').css("top", - (scrollval / 10) + 'px');
-//     } else {
-//         $('.bgCase .imgWeb').css("top", + (scrollval / 10) + 'px');
-//     }
-// }
-// $(window).scroll(function () {
-//     moveImgCases();
-// });
+    function typeLetter() {
+        text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.className = 'letter';
+            span.style.animationDelay = `${index * 0.05}s`; // Ajusta o atraso para cada letra
+            heading.appendChild(span);
+        });
+    }
+
+    function checkScroll() {
+        const containerPosition = container.getBoundingClientRect().top + window.scrollY;
+        const scrollPosition = window.scrollY;
+        if (scrollPosition >= (containerPosition - aboutTextTriggerSpace)) {
+            heading.classList.add('visible');
+            typeLetter();
+            window.removeEventListener('scroll', checkScroll); // Remove o evento para evitar múltiplas execuções
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do link
+
+            const targetId = this.getAttribute('href').substring(1); // Obtém o ID da seção alvo
+            const targetSection = document.getElementById(targetId);
+
+            // Scroll suave para a seção alvo
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+});

@@ -296,6 +296,10 @@ h5 {
     }
 }
 
+.headerAtive {
+    margin-top: 2vw;
+}
+
 .headerNeon {
     .logo {
         svg {
@@ -413,24 +417,39 @@ h5 {
             font-size: 1.1vw;
             text-transform: uppercase;
             font-family: "Medium_Narrow";
-            margin-right: 10vw;
             opacity: 0;
             transition: 0.5s;
         }
 
+        .right {
+            margin-right: 10vw;
+        }
+
+        .rightActive {
+            margin-right: 24.5vw;
+        }
+
         .left {
             margin-left: 10vw;
+        }
+
+        .leftActive {
+            margin-left: 24.5vw;
+        }
+
+        .preHeaderActive {
+            opacity: 1;
         }
     }
 
     .contH2 {
         overflow: hidden;
         position: relative;
-        height: 9vw;
+        height: 8vw;
 
         h2 {
             font-family: "Black_Narrow";
-            font-size: 10vw;
+            font-size: 9vw;
             line-height: 90%;
             text-transform: uppercase;
             text-align: center;
@@ -458,29 +477,49 @@ h5 {
     }
 
     .defaultCTA {
-        margin: 2vh auto 0 auto;
+        margin: 3vh auto 0 auto;
         transform: scale(1.2);
     }
 }
 
 .about {
     width: calc(100% - 8vw);
-    margin: 25vw auto 0 auto;
+    margin: 13vw auto 0 auto;
+    padding-top: 7vw;
     position: relative;
 
     h2 {
         font-size: 2.8vw;
-        font-family: "Bold_Narrow";
         text-transform: uppercase;
         line-height: 100%;
         width: 40vw;
-
-        // padding-left: 40vw;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        white-space: pre-wrap;
+        height: 20vh;
+        span{
+            font-family: "Bold_Narrow";
+        }
+        .letter {
+            display: inline;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.1s forwards;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         i {
             font-family: "Bold_Narrow_Italic";
         }
     }
-
+    .visible {
+        opacity: 1;
+    }
 
     .freehand {
         font-family: "Trashhand";
@@ -563,9 +602,13 @@ h5 {
     height: 17vw;
     margin-right: 2vw;
     margin-top: 7vw;
+    width: 6.5vw;
+    svg{
+        display: none;
+    }
 }
 
-@-webkit-keyframes animate-svg-stroke-1 {
+@-webkit-keyframes animaStroke1 {
     0% {
         stroke-dashoffset: 380.99456787109375px;
         stroke-dasharray: 380.99456787109375px;
@@ -577,7 +620,7 @@ h5 {
     }
 }
 
-@keyframes animate-svg-stroke-1 {
+@keyframes animaStroke1 {
     0% {
         stroke-dashoffset: 380.99456787109375px;
         stroke-dasharray: 380.99456787109375px;
@@ -590,11 +633,11 @@ h5 {
 }
 
 .svg-elem-1 {
-    -webkit-animation: animate-svg-stroke-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
-    animation: animate-svg-stroke-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+    -webkit-animation: animaStroke1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+    animation: animaStroke1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
 }
 
-@-webkit-keyframes animate-svg-stroke-2 {
+@-webkit-keyframes animaStroke2 {
     0% {
         stroke-dashoffset: 25.649932861328125px;
         stroke-dasharray: 25.649932861328125px;
@@ -606,7 +649,7 @@ h5 {
     }
 }
 
-@keyframes animate-svg-stroke-2 {
+@keyframes animaStroke2 {
     0% {
         stroke-dashoffset: 25.649932861328125px;
         stroke-dasharray: 25.649932861328125px;
@@ -616,19 +659,20 @@ h5 {
         stroke-dashoffset: 0;
         stroke-dasharray: 25.649932861328125px;
     }
+}
+
+.svg-elem-2 {
+    -webkit-animation: animaStroke2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+    animation: animaStroke2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
 }
 
 // END CURVE ARROW============================
 
-.svg-elem-2 {
-    -webkit-animation: animate-svg-stroke-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
-    animation: animate-svg-stroke-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
-}
-
 
 .projects {
     width: calc(100% - 8vw);
-    margin: 2vw auto 0 auto;
+    margin: 0 auto 0 auto;
+    padding-top:5vw;
     .headline {
         display: flex;
         flex-direction: column;
@@ -684,39 +728,141 @@ h5 {
     align-items: center;
     flex-direction: column;
     padding: 13vw 0 15vw 0;
+    z-index: 0;
 
-    h2 {
-        font-size: 10vw;
-        font-family: "Black_Narrow";
-        text-transform: uppercase;
-        line-height: 100%;
-        z-index: 1;
-        text-align: center;
-        margin-bottom:1vw;
+    .mask {
+        overflow: hidden;
+        width: 65%;
+        position: relative;
+        height: 7.5vw;
+
+        h2 {
+            font-size: 8vw;
+            font-family: "Black_Narrow";
+            text-transform: uppercase;
+            line-height: 100%;
+            z-index: 1;
+            text-align: center;
+            margin-top: 20vw;
+            position: absolute;
+            width: 100%;
+            transition: 0.5s;
+        }
+
+        .head3 {
+            font-family: "Trashhand";
+            color: var(--red);
+            text-shadow: 3px 0 var(--escuro), -3px 0 var(--escuro), 0 3px var(--escuro), 0 -3px var(--escuro), 2px 2px var(--escuro), -2px -2px var(--escuro), 2px -2px var(--escuro), -2px 2px var(--escuro);
+        }
+
+        .h2Active {
+            margin-top: 0;
+        }
     }
 
     img {
-        width: 20vw;
-        transform: rotate(8deg);
-        margin-bottom: -1vw;
+        width: 10vw;
         z-index: 0;
+        position: absolute;
+        transition: 1s;
     }
 
-    .call {
-        font-family: "Medium_Narrow";
-        font-size: 2.3vw;
-        margin-bottom: 3vw;
+    .gif1 {
+        transform: rotate(40deg);
+        left: 50%;
+        top: 50%;
+        width: 1px;
+        height: 1px;
+    }
+
+    .gif1Active {
+        transform: rotate(-12deg);
+        left: 5vw;
+        top: 7vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .gif2 {
+        transform: rotate(40deg);
+        right: 50%;
+        top: 50%;
+        width: 1px;
+        height: 1px;
+    }
+
+    .gif2Active {
+        transform: rotate(10deg);
+        right: 5vw;
+        top: 7vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .gif3 {
+        transform: rotate(40deg);
+        left: 50%;
+        bottom: 50%;
+        width: 1px;
+        height: 1px;
+    }
+
+    .gif3Active {
+        transform: rotate(5deg);
+        left: 5vw;
+        bottom: 7vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .gif4 {
+        transform: rotate(40deg);
+        right: 50%;
+        bottom: 50%;
+        width: 1px;
+        height: 1px;
+    }
+
+    .gif4Active {
+        transform: rotate(-12deg);
+        right: 5vw;
+        bottom: 7vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .freehand {
+        font-family: "Trashhand";
+        font-size: 1.8vw;
+        top: -5vw;
+        position: relative;
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    .freehandActive {
+        top: 0vw;
+        opacity: 1;
     }
 
     .defaultCTA {
-        transform: scale(1.5);
-        transform-origin: center;
+        transform: scale(2);
+        transform-origin: top center;
+        margin-top: 1vw;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .defaultCTAActive {
+        opacity: 1;
     }
 }
 
 .bgServices {
     background-color: var(--escuro);
     height: 280vh;
+    position: relative;
+    z-index: 1;
 
     .sticky {
         overflow: hidden;
@@ -795,7 +941,7 @@ h5 {
                     position: absolute;
                     right: 5%;
                     bottom: -10%;
-                    // stroke: #fff;
+                    display: none;
                     transform: rotate(-82deg);
                 }
             }
@@ -809,13 +955,13 @@ h5 {
     margin: 0 auto;
     position: relative;
     padding-top: 10vw;
-    overflow: hidden;
+    display: ruby-text;
+
     .headline {
         width: 40%;
-        display: flex;
-        align-items: baseline;
-        flex-direction: column;
-        float: left;
+        position: sticky;
+        top: 6vw;
+
         h2 {
             line-height: 90%;
             margin: 0 auto;
@@ -830,6 +976,8 @@ h5 {
             margin-top: -0.2vw;
             margin-left: 13vw;
             transform: rotate(-4deg);
+            float: left;
+            display: block;
 
             .freehand {
                 font-size: 2vw;
@@ -845,7 +993,7 @@ h5 {
         width: 55%;
         display: flex;
         flex-wrap: wrap;
-        float: right;
+
         div {
             width: 33.3333%;
             height: 12vw;
