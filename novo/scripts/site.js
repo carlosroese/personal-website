@@ -75,12 +75,10 @@ $(document).ready(function () {
     };
     setTimeout(avatar, 1000);
 
-
-
-
     $(window).scroll(function () {
         var scrollval = $(this).scrollTop();    // It will return scroll value
         var anchorAbout = $('.about').offset().top;
+        var anchorProjects = $('.projects').offset().top;
         var anchorServices = $('.bgServices').offset().top;
         var anchorClients = $('.bgClients').offset().top;
         var anchorCtaBreak = $('.ctaBreak').offset().top;
@@ -107,6 +105,7 @@ $(document).ready(function () {
             $('.header').addClass('headerNeon');
             $('.header .defaultCTA').addClass('defaultCTANeon');
         }
+        //END HEADER CHANGING OF COLOR ON SCROLL
 
         //Hero Headlines as you scroll
         $(".hero .step1").css("margin-left", - (scrollval / 1) + 'px');
@@ -116,15 +115,32 @@ $(document).ready(function () {
 
         //About Section Animations as you scroll
         $(".about .big15Years .myPicture").css("top", (0 - (scrollval / 2)) + 'px');
-        let tenVh = window.innerHeight * 0.70;
-        if (scrollval >= (anchorAbout + tenVh)) {
+        let curveArrowTriggerAnimation = window.innerHeight * 0.70;
+        if (scrollval >= (anchorAbout + curveArrowTriggerAnimation)) {
             $(".curveArrow svg").css("display", 'block');
         }
 
 
+        //PROJECTS ANIMATIONS AS SCROLL
+        let projectsHeadlineTriggerAnimation = window.innerHeight * 0.80;
+        if (scrollval >= (anchorProjects - projectsHeadlineTriggerAnimation)) {
+            $('.projects .headline').addClass("headlineActive");
+        } else {
+            $('.projects .headline').removeClass("headlineActive");
+        }
+
         //SERVICES ANIMATIONS AS SCROLL
         if (scrollval >= anchorServices) {
             $('.bgServices .curveArrow').css("display", 'block');
+        }
+
+
+        //CLIENTS ANIMATIONS AS SCROLL
+        let clientsHeadlineTriggerAnimation = window.innerHeight * 0.80;
+        if (scrollval >= (anchorClients - clientsHeadlineTriggerAnimation)) {
+            $('.bgClients .headline').addClass("headlineActive");
+        } else {
+            $('.bgClients .headline').removeClass("headlineActive");
         }
 
 
@@ -199,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const text = heading.textContent;
     let aboutTextTriggerSpace = window.innerHeight * 0.70;
     heading.textContent = ''; // Limpa o texto original
-    const menuLinks = document.querySelectorAll('a');
+    const menuLinks = document.querySelectorAll('.hasAnchorLink');
 
     function typeLetter() {
         text.split('').forEach((char, index) => {
@@ -224,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', checkScroll);
 
     menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault(); // Previne o comportamento padrão do link
 
             const targetId = this.getAttribute('href').substring(1); // Obtém o ID da seção alvo
