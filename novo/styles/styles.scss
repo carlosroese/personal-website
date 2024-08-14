@@ -1481,4 +1481,27 @@ svg {
             }
         }
     }
+    .projects{
+        padding-top: 10vh;
+        .headline{
+            h2{
+                font-size: 12vw;
+                width: 100%;
+            }
+            .box{
+                padding: 2vw 3vw;
+                .freehand{
+                    font-size: 5vw;
+                }
+            }
+        }
+        .grid{
+            margin-top: 7vw;
+            a{
+                width: 100%;
+                height: 30vh;
+                margin-bottom: 5vw;
+            }
+        }
+    }
 }

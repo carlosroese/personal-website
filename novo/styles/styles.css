@@ -1033,6 +1033,22 @@ svg {
         height: 38vw;
         margin-left: 33vw;
         margin-top: 17vw;
-        width: 14.5vw; } }
+        width: 14.5vw; }
+
+  .projects {
+    padding-top: 10vh; }
+    .projects .headline h2 {
+      font-size: 12vw;
+      width: 100%; }
+    .projects .headline .box {
+      padding: 2vw 3vw; }
+      .projects .headline .box .freehand {
+        font-size: 5vw; }
+    .projects .grid {
+      margin-top: 7vw; }
+      .projects .grid a {
+        width: 100%;
+        height: 30vh;
+        margin-bottom: 5vw; } }
 
 /*# sourceMappingURL=styles.css.map */
