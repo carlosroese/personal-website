@@ -629,7 +629,7 @@ svg {
             width: 35vw;
             height: 46.6vw;
             right: 80px;
-            top: -35vw;
+            
             transform: rotate(8deg);
             z-index: 1;
         }
@@ -1429,7 +1429,6 @@ svg {
         #animatedText{
             width: 100%;
             font-size: 7vw;
-            height: auto;
             background: red;
         }
         .freehand{
@@ -1439,8 +1438,8 @@ svg {
         .big15Years{
             .myPicture{
                 right: 0;
-                width: 43vw;
-                height: 56.6vw;
+                width: 53vw;
+                height: 66vw;
             }
         }
     }

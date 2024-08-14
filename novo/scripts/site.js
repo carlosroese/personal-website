@@ -49,7 +49,7 @@ $(document).ready(function () {
     setTimeout(startLogoAnimation, 1200);
 
     var startLogoHide = function () {
-        $('.startAnimation').css("display","none");
+        $('.startAnimation').css("display", "none");
     };
     setTimeout(startLogoHide, 2900);
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
 
     var subH1 = function () {
         $('.hero .sub-h1').addClass("sub-h1Active");
-        $('.hero .defaultCTA').css("opacity","1");
+        $('.hero .defaultCTA').css("opacity", "1");
     };
     setTimeout(subH1, 2000);
 
@@ -133,7 +133,7 @@ $(document).ready(function () {
         $(".about .big15Years .myPicture").css("top", (0 - (scrollval / 2)) + 'px');
         $(".about .freehandred").css("rotate", (-(scrollval / 200)) + 'deg');
         $(".about .freehandred").css("margin-top", (scrollval / 15) + 'px');
-        
+
         let curveArrowTriggerAnimation = window.innerHeight * 0.70;
         if (scrollval >= (anchorAbout + curveArrowTriggerAnimation)) {
             $(".curveArrow svg").css("display", 'block');
@@ -218,7 +218,7 @@ $(document).ready(function () {
                 $('.bgFooter .headline .box1 h2').addClass("h2ActiveFooter");
             };
             setTimeout(footerTitle1, 100);
-            
+
             var footerTitle2 = function () {
                 $('.bgFooter .headline .box2 h2').addClass("h2ActiveFooter");
             };
@@ -237,12 +237,12 @@ $(document).ready(function () {
             setTimeout(footerCTAs, 700);
 
             var copyrightShow = function () {
-                $('.bgFooter .copyright').css("opacity" , "1");
+                $('.bgFooter .copyright').css("opacity", "1");
             };
             setTimeout(copyrightShow, 1000);
-        } 
+        }
 
-        
+
     });
 });
 
@@ -256,64 +256,108 @@ window.addEventListener('scroll', function () {
 
 
 
+if ($(window).width() > 1023) {
+    //ABOUT TEXT LETTERS ANIMATION
+    document.addEventListener('DOMContentLoaded', function () {
+        const heading = document.getElementById('animatedText');
+        const container = document.getElementById('aboutMe');
+        const text = heading.textContent;
+        let aboutTextTriggerSpace = window.innerHeight * 0.70;
+        heading.textContent = ''; // Limpa o texto original
+        const menuLinks = document.querySelectorAll('.hasAnchorLink'); //usado nas animações anchor do menu
 
-//ABOUT TEXT LETTERS ANIMATION
-document.addEventListener('DOMContentLoaded', function () {
-    const heading = document.getElementById('animatedText');
-    const container = document.getElementById('aboutMe');
-    const text = heading.textContent;
-    let aboutTextTriggerSpace = window.innerHeight * 0.70;
-    heading.textContent = ''; // Limpa o texto original
-    const menuLinks = document.querySelectorAll('.hasAnchorLink');
-
-    function typeLetter() {
-        text.split('').forEach((char, index) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            span.className = 'letter';
-            span.style.animationDelay = `${index * 0.05}s`; // Ajusta o atraso para cada letra
-            heading.appendChild(span);
-        });
-    }
-
-    function checkScroll() {
-        const containerPosition = container.getBoundingClientRect().top + window.scrollY;
-        const scrollPosition = window.scrollY;
-        if (scrollPosition >= (containerPosition - aboutTextTriggerSpace)) {
-            heading.classList.add('visible');
-            typeLetter();
-            window.removeEventListener('scroll', checkScroll); // Remove o evento para evitar múltiplas execuções
+        function typeLetter() {
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.className = 'letter';
+                span.style.animationDelay = `${index * 0.05}s`; // Ajusta o atraso para cada letra
+                heading.appendChild(span);
+            });
         }
-    }
 
-    window.addEventListener('scroll', checkScroll);
+        function checkScroll() {
+            const containerPosition = container.getBoundingClientRect().top + window.scrollY;
+            const scrollPosition = window.scrollY;
+            if (scrollPosition >= (containerPosition - aboutTextTriggerSpace)) {
+                heading.classList.add('visible');
+                typeLetter();
+                window.removeEventListener('scroll', checkScroll); // Remove o evento para evitar múltiplas execuções
+            }
+        }
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // Previne o comportamento padrão do link
+        window.addEventListener('scroll', checkScroll);
 
-            const targetId = this.getAttribute('href').substring(1); // Obtém o ID da seção alvo
-            const targetSection = document.getElementById(targetId);
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Previne o comportamento padrão do link
 
-            // Scroll suave para a seção alvo
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                const targetId = this.getAttribute('href').substring(1); // Obtém o ID da seção alvo
+                const targetSection = document.getElementById(targetId);
+
+                // Scroll suave para a seção alvo
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
     });
-});
+}
 
-// Obtém o elemento p pelo seu ID
+
+
+// Muda o Ano no copyright
 const currentYearElement = document.getElementById('currentYear');
-
-// Cria um novo objeto Date
 const currentYear = new Date().getFullYear();
-
-// Define o texto do elemento p com o ano atual
 currentYearElement.textContent = currentYear;
+// Fim
 
 
 if ($(window).width() < 1023) {
-    
+    document.addEventListener('DOMContentLoaded', function () {
+        const heading = document.getElementById('animatedText');
+        const container = document.getElementById('aboutMe');
+        const text = heading.textContent;
+        let aboutTextTriggerSpace = window.innerHeight * 2;
+        heading.textContent = ''; // Limpa o texto original
+        const menuLinks = document.querySelectorAll('.hasAnchorLink'); //usado nas animações anchor do menu
+
+        function typeLetter() {
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.className = 'letter';
+                span.style.animationDelay = `${index * 0.05}s`; // Ajusta o atraso para cada letra
+                heading.appendChild(span);
+            });
+        }
+
+        function checkScroll() {
+            const containerPosition = container.getBoundingClientRect().top + window.scrollY;
+            const scrollPosition = window.scrollY;
+            if (scrollPosition >= (containerPosition - aboutTextTriggerSpace)) {
+                heading.classList.add('visible');
+                typeLetter();
+                window.removeEventListener('scroll', checkScroll); // Remove o evento para evitar múltiplas execuções
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll);
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Previne o comportamento padrão do link
+
+                const targetId = this.getAttribute('href').substring(1); // Obtém o ID da seção alvo
+                const targetSection = document.getElementById(targetId);
+
+                // Scroll suave para a seção alvo
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    });
 }
