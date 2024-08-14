@@ -945,19 +945,22 @@ svg {
     height: 100vh;
     padding-top: 31vh; }
     .hero img {
-      height: 25vw;
-      left: calc(50% - 12.5vw);
+      height: 35vw;
+      left: calc(50% - 17.5vw);
       margin-top: -60vh; }
     .hero .avatarActive {
-      margin-top: -12vh; }
+      margin-top: -17vh; }
     .hero .contH2 {
-      height: 12vw; }
+      height: 17vw; }
       .hero .contH2 h2 {
-        font-size: 13vw;
+        font-size: 18vw;
         font-family: "ExtraBold_Narrow";
-        letter-spacing: -1px; }
+        letter-spacing: -1px;
+        margin-top: 18vw; }
         .hero .contH2 h2 span {
           display: none;
+          font-family: "ExtraBold_Narrow"; }
+        .hero .contH2 h2 i {
           font-family: "ExtraBold_Narrow"; }
     .hero .sub-h1 {
       font-size: 7vw;
@@ -968,7 +971,7 @@ svg {
     .hero .defaultCTA {
       margin-top: 4vh; }
     .hero .smallText {
-      position: relative;
+      bottom: 0;
       margin-top: 0;
       justify-content: center; }
       .hero .smallText p {
