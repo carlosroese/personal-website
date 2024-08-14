@@ -399,7 +399,7 @@ svg {
     margin-left: 4vw;
     transition: opacity 0.3s ease-in-out;
     white-space: pre-wrap;
-    height: 20vh;
+    height: 40vh;
     font-family: "Medium_Narrow";
     -webkit-font-smoothing: antialiased; }
     .about #animatedText span {
@@ -1021,7 +1021,7 @@ svg {
     margin: 0 auto; }
     .about #animatedText {
       width: 90vw;
-      font-size: 7vw;
+      font-size: 10vw;
       margin-left: 5vw; }
     .about .freehand {
       font-size: 6vw;
@@ -1036,7 +1036,7 @@ svg {
         height: 66vw;
         margin-top: -10vh; }
     .about .freehandred {
-      font-size: 5.5vw; }
+      font-size: 6vw; }
     .about .aboutCarlos {
       margin-top: 15vh;
       margin-bottom: 10vh;
@@ -1082,18 +1082,20 @@ svg {
     margin-bottom: 20vh;
     width: calc(100% - 8vw);
     justify-content: center;
-    height: 75vh; }
+    height: 87vh; }
     .ctaBreak .freehandActive {
-      font-size: 10vw; }
+      font-size: 10vw;
+      margin-bottom: 3vh; }
     .ctaBreak .mask {
       width: 100%;
-      height: 15vw; }
+      height: 17vw; }
       .ctaBreak .mask h2 {
-        font-size: 14vw;
+        font-size: 16vw;
         font-family: "ExtraBold_Narrow";
         letter-spacing: -1px; }
     .ctaBreak .defaultCTA {
-      transform: scale(1); }
+      transform: scale(1);
+      margin-top: 3vh; }
     .ctaBreak .gif1Active {
       width: 25vw;
       height: 25vw;
@@ -1208,9 +1210,10 @@ svg {
       .bgFooter .headline .box {
         padding: 2vw 3vw; }
         .bgFooter .headline .box .freehand {
-          font-size: 5vw; }
+          font-size: 7vw; }
       .bgFooter .headline .defaultCTA {
-        transform: scale(1); }
+        transform: scale(1.2);
+        margin-top: 4vh; }
     .bgFooter .ctas {
       margin-top: 5vh; }
       .bgFooter .ctas .lastContact {

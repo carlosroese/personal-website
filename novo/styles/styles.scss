@@ -570,7 +570,7 @@ svg {
         margin-left: 4vw;
         transition: opacity 0.3s ease-in-out;
         white-space: pre-wrap;
-        height: 20vh;
+        height: 40vh;
         font-family: "Medium_Narrow";
         -webkit-font-smoothing: antialiased;
 
@@ -1453,7 +1453,7 @@ svg {
 
         #animatedText {
             width: 90vw;
-            font-size: 7vw;
+            font-size: 10vw;
             margin-left: 5vw;
         }
 
@@ -1475,7 +1475,7 @@ svg {
         }
 
         .freehandred {
-            font-size: 5.5vw;
+            font-size: 6vw;
         }
 
         .aboutCarlos {
@@ -1544,18 +1544,19 @@ svg {
         margin-bottom: 20vh;
         width: calc(100% - 8vw);
         justify-content: center;
-        height: 75vh;
+        height: 87vh;
 
         .freehandActive {
             font-size: 10vw;
+            margin-bottom: 3vh;
         }
 
         .mask {
             width: 100%;
-            height: 15vw;
+            height: 17vw;
 
             h2 {
-                font-size: 14vw;
+                font-size: 16vw;
                 font-family: "ExtraBold_Narrow";
                 letter-spacing: -1px;
             }
@@ -1563,6 +1564,7 @@ svg {
 
         .defaultCTA {
             transform: scale(1);
+            margin-top: 3vh;
         }
 
         .gif1Active {
@@ -1729,12 +1731,13 @@ svg {
                 padding: 2vw 3vw;
 
                 .freehand {
-                    font-size: 5vw;
+                    font-size: 7vw;
                 }
             }
 
             .defaultCTA {
-                transform: scale(1);
+                transform: scale(1.2);
+                margin-top: 4vh;
             }
         }
 
