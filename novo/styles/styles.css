@@ -1056,15 +1056,17 @@ svg {
         margin-bottom: 5vw; }
 
   .ctaBreak {
-    padding: 15vh 0; }
+    padding: 20vh 0 10vh 0;
+    margin-top: 5vh; }
     .ctaBreak .freehandActive {
-      font-size: 10vw;
-      margin-top: 3vh; }
+      font-size: 10vw; }
     .ctaBreak .mask {
       width: 100%;
       height: 15vw; }
       .ctaBreak .mask h2 {
-        font-size: 14vw; }
+        font-size: 14vw;
+        font-family: "ExtraBold_Narrow";
+        letter-spacing: -1px; }
     .ctaBreak .defaultCTA {
       transform: scale(1); }
     .ctaBreak .gif3 {

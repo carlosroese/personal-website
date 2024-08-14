@@ -1517,11 +1517,10 @@ svg {
     }
 
     .ctaBreak {
-        padding: 15vh 0;
-
+        padding: 20vh 0 10vh 0;
+        margin-top: 5vh;
         .freehandActive {
-            font-size: 10vw;
-            margin-top: 3vh;
+            font-size: 10vw; 
         }
 
         .mask {
@@ -1530,6 +1529,8 @@ svg {
 
             h2 {
                 font-size: 14vw;
+                font-family: "ExtraBold_Narrow";
+                letter-spacing: -1px;
             }
         }
 
