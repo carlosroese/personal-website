@@ -1518,7 +1518,8 @@ svg {
 
     .ctaBreak {
         padding: 0;
-        margin: 20vh 0;
+        margin-top: 20vh;
+        margin-bottom: 20vh;
         width: calc(100% - 8vw);
         justify-content: center;
         height: 75vh;
