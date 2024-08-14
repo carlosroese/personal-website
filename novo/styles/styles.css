@@ -1037,20 +1037,61 @@ svg {
 
   .projects {
     padding-top: 10vh; }
-    .projects .headline h2 {
-      font-size: 12vw;
-      width: 100%;
-      font-family: "ExtraBold_Narrow";
-      letter-spacing: -1px; }
-    .projects .headline .box {
-      padding: 2vw 3vw; }
-      .projects .headline .box .freehand {
-        font-size: 5vw; }
+    .projects .headline {
+      margin-left: 0; }
+      .projects .headline h2 {
+        font-size: 12vw;
+        width: 90%;
+        font-family: "ExtraBold_Narrow";
+        letter-spacing: -1px; }
+      .projects .headline .box {
+        padding: 2vw 3vw; }
+        .projects .headline .box .freehand {
+          font-size: 5vw; }
     .projects .grid {
       margin-top: 7vw; }
       .projects .grid a {
         width: 100%;
         height: 30vh;
-        margin-bottom: 5vw; } }
+        margin-bottom: 5vw; }
+
+  .ctaBreak {
+    padding: 15vh 0; }
+    .ctaBreak .freehandActive {
+      font-size: 10vw;
+      margin-top: 3vh; }
+    .ctaBreak .mask {
+      width: 100%;
+      height: 15vw; }
+      .ctaBreak .mask h2 {
+        font-size: 14vw; }
+    .ctaBreak .defaultCTA {
+      transform: scale(1); }
+    .ctaBreak .gif3 {
+      bottom: unset;
+      top: 50%; }
+    .ctaBreak .gif4 {
+      top: 50%;
+      bottom: unset; }
+    .ctaBreak .gif1Active {
+      width: 20vw;
+      height: 20vw;
+      left: 0;
+      top: 7vw; }
+    .ctaBreak .gif2Active {
+      width: 20vw;
+      height: 20vw;
+      left: 20vw;
+      top: 7vw; }
+    .ctaBreak .gif3Active {
+      width: 20vw;
+      height: 20vw;
+      left: 40vw;
+      top: 7vw; }
+    .ctaBreak .gif4Active {
+      width: 20vw;
+      height: 20vw;
+      right: 0;
+      top: 7vw; } }
 
 /*# sourceMappingURL=styles.css.map */
