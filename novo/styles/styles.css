@@ -956,7 +956,8 @@ svg {
         font-size: 17vw;
         font-family: "ExtraBold_Narrow";
         letter-spacing: -2px;
-        margin-top: 18vw; }
+        margin-top: 18vw;
+        color: red; }
         .hero .contH2 h2 span {
           display: none;
           font-family: "ExtraBold_Narrow"; }
