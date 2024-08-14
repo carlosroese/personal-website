@@ -667,7 +667,7 @@ svg {
 
     .aboutCarlos {
         margin-top: 5vw;
-        margin-left: 27%;
+        margin-left: 35%;
         display: flex;
         position: relative;
         z-index: 1;
@@ -698,10 +698,13 @@ svg {
 // CURVE ARROW============================
 .curveArrow {
     height: 17vw;
-    margin-right: 2vw;
+    margin-left: 2vw;
     margin-top: 7vw;
     width: 6.5vw;
-
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
     svg {
         display: none;
     }
@@ -1431,6 +1434,7 @@ svg {
         .freehand{
             font-size: 6vw;
             margin-top: 20vh;
+            margin-bottom: 2vh;
         }
         .big15Years{
             .myPicture{
@@ -1438,6 +1442,25 @@ svg {
                 width: 53vw;
                 height: 66vw;
                 margin-top: -10vh;
+            }
+        }
+        .freehandred{
+            font-size: 5.5vw;
+        }
+        .aboutCarlos{
+            margin-top: 15vh;
+            margin-left: 0;
+            margin-bottom: 10vh;
+            p{
+                width: 57vw;
+                font-size: 5vw;
+            }
+            img{
+                width: 32vw;
+                height: 32vw;
+            }
+            .curveArrow{
+                display: none;
             }
         }
     }
