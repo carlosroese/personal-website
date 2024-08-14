@@ -1522,8 +1522,9 @@ svg {
         width: calc(100% - 8vw);
         justify-content: center;
         height: 85vh;
+
         .freehandActive {
-            font-size: 10vw; 
+            font-size: 10vw;
         }
 
         .mask {
@@ -1558,12 +1559,70 @@ svg {
         .gif3Active {
             width: 25vw;
             height: 25vw;
-            
+
         }
 
         .gif4Active {
             width: 25vw;
             height: 25vw;
+        }
+    }
+
+    .bgServices {
+        height: auto;
+        padding: 5vh 0;
+
+        .sticky {
+            position: relative;
+            top: 0;
+            height: auto;
+
+            .scrollSection {
+                position: relative;
+                top: 0;
+                height: auto;
+                width: 92vw;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+
+                .boxes {
+                    width: 100%;
+                    margin-bottom: 5vw;
+                    padding: 5vh;
+                    height: 70vw;
+                    h3 {
+                        font-family: "ExtraBold_Narrow";
+                        letter-spacing: -1px;
+                    }
+
+                    p {
+                        font-size: 5vw;
+                        width: 100%;
+                    }
+                }
+
+                .headlines {
+                    margin-bottom:10vw;
+                    padding: 0 5vh;
+                    height: auto;
+                    .freehand {
+                        font-size: 6vw;
+                        width: 100%;
+                    }
+
+                    h2 {
+                        font-size: 9vw;
+                        font-family: "ExtraBold_Narrow";
+                        letter-spacing: -1px;
+                        width: 100%;
+                        
+                    }
+                }
+            }
         }
     }
 }

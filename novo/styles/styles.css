@@ -1087,6 +1087,48 @@ svg {
       height: 25vw; }
     .ctaBreak .gif4Active {
       width: 25vw;
-      height: 25vw; } }
+      height: 25vw; }
+
+  .bgServices {
+    height: auto;
+    padding: 5vh 0; }
+    .bgServices .sticky {
+      position: relative;
+      top: 0;
+      height: auto; }
+      .bgServices .sticky .scrollSection {
+        position: relative;
+        top: 0;
+        height: auto;
+        width: 92vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0; }
+        .bgServices .sticky .scrollSection .boxes {
+          width: 100%;
+          margin-bottom: 5vw;
+          padding: 5vh;
+          height: 70vw; }
+          .bgServices .sticky .scrollSection .boxes h3 {
+            font-family: "ExtraBold_Narrow";
+            letter-spacing: -1px; }
+          .bgServices .sticky .scrollSection .boxes p {
+            font-size: 5vw;
+            width: 100%; }
+        .bgServices .sticky .scrollSection .headlines {
+          margin-bottom: 10vw;
+          padding: 0 5vh;
+          height: auto; }
+          .bgServices .sticky .scrollSection .headlines .freehand {
+            font-size: 6vw;
+            width: 100%; }
+          .bgServices .sticky .scrollSection .headlines h2 {
+            font-size: 9vw;
+            font-family: "ExtraBold_Narrow";
+            letter-spacing: -1px;
+            width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */
