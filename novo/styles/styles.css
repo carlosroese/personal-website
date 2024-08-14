@@ -1021,12 +1021,18 @@ svg {
       margin-left: 0;
       margin-bottom: 10vh; }
       .about .aboutCarlos p {
-        width: 57vw;
+        width: 55vw;
         font-size: 5vw; }
       .about .aboutCarlos img {
         width: 32vw;
-        height: 32vw; }
+        height: 32vw;
+        margin-left: 2vw; }
       .about .aboutCarlos .curveArrow {
-        display: none; } }
+        transform: scaleX(1) rotate(-90deg);
+        position: absolute;
+        height: 38vw;
+        margin-left: 33vw;
+        margin-top: 17vw;
+        width: 14.5vw; } }
 
 /*# sourceMappingURL=styles.css.map */

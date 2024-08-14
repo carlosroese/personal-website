@@ -93,7 +93,8 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         var scrollval = $(this).scrollTop();    // It will return scroll value
-        var anchorAbout = $('.about').offset().top;
+        // var anchorAbout = $('.about').offset().top;
+        var anchorAboutCarlos = $('.aboutCarlos').offset().top;
         var anchorProjects = $('.projects').offset().top;
         var anchorServices = $('.bgServices').offset().top;
         var anchorClients = $('.bgClients').offset().top;
@@ -125,7 +126,7 @@ $(document).ready(function () {
 
 
         //Hero Headlines as you scroll
-        if ($(window).width() < 769) {
+        if ($(window).width() < 1024) {
             var myPictureSpeed = 7;
         }else{
             var myPictureSpeed = 2;
@@ -140,9 +141,14 @@ $(document).ready(function () {
         $(".about .freehandred").css("rotate", (-(scrollval / 200)) + 'deg');
         $(".about .freehandred").css("margin-top", (scrollval / 15) + 'px');
 
-        let curveArrowTriggerAnimation = window.innerHeight * 0.70;
-        if (scrollval >= (anchorAbout + curveArrowTriggerAnimation)) {
+        if ($(window).width() < 1024) {
+            var curveArrowTriggerPlace = 0.7;
+        }else{
+            var curveArrowTriggerPlace = 0.7;
+        }
+        if (scrollval >= (anchorAboutCarlos * curveArrowTriggerPlace)) {
             $(".curveArrow svg").css("display", 'block');
+            // alert("asasas");
         }
 
 

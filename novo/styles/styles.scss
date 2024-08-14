@@ -629,7 +629,7 @@ svg {
             width: 35vw;
             height: 46.6vw;
             right: 80px;
-            
+
             transform: rotate(8deg);
             z-index: 1;
         }
@@ -705,6 +705,7 @@ svg {
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+
     svg {
         display: none;
     }
@@ -1357,6 +1358,7 @@ svg {
                 font-family: "ExtraBold_Narrow";
                 letter-spacing: -2px;
                 margin-top: 18vw;
+
                 span {
                     display: none;
                     font-family: "ExtraBold_Narrow";
@@ -1424,43 +1426,58 @@ svg {
             -webkit-transform: scale(392) rotate(-15deg);
         }
     }
-    .about{
+
+    .about {
         padding-top: 0;
         margin: 0 auto;
-        #animatedText{
+
+        #animatedText {
             width: 100%;
             font-size: 7vw;
         }
-        .freehand{
+
+        .freehand {
             font-size: 6vw;
             margin-top: 20vh;
             margin-bottom: 2vh;
         }
-        .big15Years{
-            .myPicture{
+
+        .big15Years {
+            .myPicture {
                 right: 0;
                 width: 53vw;
                 height: 66vw;
                 margin-top: -10vh;
             }
         }
-        .freehandred{
+
+        .freehandred {
             font-size: 5.5vw;
         }
-        .aboutCarlos{
+
+        .aboutCarlos {
             margin-top: 15vh;
             margin-left: 0;
             margin-bottom: 10vh;
-            p{
-                width: 57vw;
+
+            p {
+                width: 55vw;
                 font-size: 5vw;
             }
-            img{
+
+            img {
                 width: 32vw;
                 height: 32vw;
+                margin-left: 2vw;
             }
-            .curveArrow{
-                display: none;
+
+            .curveArrow {
+                transform: scaleX(1) rotate(-90deg);
+                position: absolute;
+                height: 38vw;
+                margin-left: 33vw;
+                margin-top: 17vw;
+                width: 14.5vw;
             }
         }
     }
