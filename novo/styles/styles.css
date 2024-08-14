@@ -1039,7 +1039,9 @@ svg {
     padding-top: 10vh; }
     .projects .headline h2 {
       font-size: 12vw;
-      width: 100%; }
+      width: 100%;
+      font-family: "ExtraBold_Narrow";
+      letter-spacing: -1px; }
     .projects .headline .box {
       padding: 2vw 3vw; }
       .projects .headline .box .freehand {
