@@ -359,6 +359,8 @@ svg {
       width: 100%;
       margin-top: 12vw;
       transition: 0.5s; }
+      .hero .contH2 h2 span {
+        font-family: "Black_Narrow"; }
       .hero .contH2 h2 i {
         font-family: "Black_Narrow_Italic"; }
   .hero .sub-h1 {
@@ -951,7 +953,8 @@ svg {
     .hero .contH2 {
       height: 12vw; }
       .hero .contH2 h2 {
-        font-size: 13vw; }
+        font-size: 13vw;
+        font-family: "ExtraBold_Narrow"; }
     .hero .sub-h1 {
       font-size: 7vw;
       margin-top: 10vh; }
