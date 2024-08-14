@@ -957,8 +957,7 @@ svg {
         font-size: 17vw;
         font-family: "ExtraBold_Narrow";
         letter-spacing: -2px;
-        margin-top: 18vw;
-        color: red; }
+        margin-top: 18vw; }
         .hero .contH2 h2 span {
           display: none;
           font-family: "ExtraBold_Narrow"; }
@@ -1001,14 +1000,14 @@ svg {
     margin: 0 auto; }
     .about #animatedText {
       width: 100%;
-      font-size: 7vw;
-      background: red; }
+      font-size: 7vw; }
     .about .freehand {
       font-size: 6vw;
       margin-top: 20vh; }
     .about .big15Years .myPicture {
       right: 0;
       width: 53vw;
-      height: 66vw; } }
+      height: 66vw;
+      margin-top: -10vh; } }
 
 /*# sourceMappingURL=styles.css.map */
