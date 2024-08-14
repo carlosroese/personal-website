@@ -9,23 +9,26 @@ window.addEventListener('resize', () => {
 
 
 //HORIZONTAL SCROLL=====================
-const stickySections = [...document.querySelectorAll('.sticky')]
+if ($(window).width() > 1023) {
+    const stickySections = [...document.querySelectorAll('.sticky')]
 
-window.addEventListener('scroll', (e) => {
-    for (let i = 0; i < stickySections.length; i++) {
-        transform(stickySections[i])
+    window.addEventListener('scroll', (e) => {
+        for (let i = 0; i < stickySections.length; i++) {
+            transform(stickySections[i])
+        }
+    })
+
+    function transform(section) {
+        const offsetTop = section.parentElement.offsetTop;
+        const scrollSection = section.querySelector('.scrollSection')
+
+
+        let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+        percentage = percentage < 0 ? 0 : percentage > 180 ? 180 : percentage;
+        scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
     }
-})
-
-function transform(section) {
-    const offsetTop = section.parentElement.offsetTop;
-    const scrollSection = section.querySelector('.scrollSection')
-
-
-    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-    percentage = percentage < 0 ? 0 : percentage > 180 ? 180 : percentage;
-    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
 }
+
 //END HORIZONTAL SCROLL=====================
 
 
@@ -128,7 +131,7 @@ $(document).ready(function () {
         //Hero Headlines as you scroll
         if ($(window).width() < 1024) {
             var myPictureSpeed = 7;
-        }else{
+        } else {
             var myPictureSpeed = 2;
         }
         $(".hero .step1").css("margin-left", - (scrollval / 1) + 'px');
@@ -143,7 +146,7 @@ $(document).ready(function () {
 
         if ($(window).width() < 1024) {
             var curveArrowTriggerPlace = 0.7;
-        }else{
+        } else {
             var curveArrowTriggerPlace = 0.7;
         }
         if (scrollval >= (anchorAboutCarlos * curveArrowTriggerPlace)) {
