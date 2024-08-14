@@ -1056,8 +1056,9 @@ svg {
         margin-bottom: 5vw; }
 
   .ctaBreak {
-    padding: 20vh 0 10vh 0;
-    margin-top: 5vh; }
+    padding: 18vh 0;
+    margin-top: 5vh;
+    width: calc(100% - 8vw); }
     .ctaBreak .freehandActive {
       font-size: 10vw; }
     .ctaBreak .mask {
@@ -1069,31 +1070,21 @@ svg {
         letter-spacing: -1px; }
     .ctaBreak .defaultCTA {
       transform: scale(1); }
-    .ctaBreak .gif3 {
-      bottom: unset;
-      top: 50%; }
-    .ctaBreak .gif4 {
-      top: 50%;
-      bottom: unset; }
     .ctaBreak .gif1Active {
-      width: 20vw;
-      height: 20vw;
+      width: 25vw;
+      height: 25vw;
       left: 0;
       top: 7vw; }
     .ctaBreak .gif2Active {
-      width: 20vw;
-      height: 20vw;
-      left: 20vw;
+      width: 25vw;
+      height: 25vw;
+      right: 0;
       top: 7vw; }
     .ctaBreak .gif3Active {
-      width: 20vw;
-      height: 20vw;
-      left: 40vw;
-      top: 7vw; }
+      width: 25vw;
+      height: 25vw; }
     .ctaBreak .gif4Active {
-      width: 20vw;
-      height: 20vw;
-      right: 0;
-      top: 7vw; } }
+      width: 25vw;
+      height: 25vw; } }
 
 /*# sourceMappingURL=styles.css.map */

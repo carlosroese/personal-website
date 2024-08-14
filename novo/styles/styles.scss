@@ -1517,8 +1517,9 @@ svg {
     }
 
     .ctaBreak {
-        padding: 20vh 0 10vh 0;
+        padding: 18vh 0;
         margin-top: 5vh;
+        width: calc(100% - 8vw);
         .freehandActive {
             font-size: 10vw; 
         }
@@ -1538,43 +1539,29 @@ svg {
             transform: scale(1);
         }
 
-        .gif3 {
-            bottom: unset;
-            top: 50%;
-        }
-
-
-        .gif4 {
-            top: 50%;
-            bottom: unset;
-        }
-
         .gif1Active {
-            width: 20vw;
-            height: 20vw;
+            width: 25vw;
+            height: 25vw;
             left: 0;
             top: 7vw;
         }
 
         .gif2Active {
-            width: 20vw;
-            height: 20vw;
-            left: 20vw;
+            width: 25vw;
+            height: 25vw;
+            right: 0;
             top: 7vw;
         }
 
         .gif3Active {
-            width: 20vw;
-            height: 20vw;
-            left: 40vw;
-            top: 7vw;
+            width: 25vw;
+            height: 25vw;
+            
         }
 
         .gif4Active {
-            width: 20vw;
-            height: 20vw;
-            right: 0;
-            top: 7vw;
+            width: 25vw;
+            height: 25vw;
         }
     }
 }
