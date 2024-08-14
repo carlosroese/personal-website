@@ -131,6 +131,9 @@ $(document).ready(function () {
 
         //About Section Animations as you scroll
         $(".about .big15Years .myPicture").css("top", (0 - (scrollval / 2)) + 'px');
+        $(".about .freehandred").css("rotate", (-(scrollval / 200)) + 'deg');
+        $(".about .freehandred").css("margin-top", (scrollval / 15) + 'px');
+        
         let curveArrowTriggerAnimation = window.innerHeight * 0.70;
         if (scrollval >= (anchorAbout + curveArrowTriggerAnimation)) {
             $(".curveArrow svg").css("display", 'block');
@@ -210,6 +213,36 @@ $(document).ready(function () {
             $('.ctaBreak .defaultCTA').removeClass("defaultCTAActive");
         }
         //Footer Animations
+        if (scrollval >= anchorFooter) {
+            var footerTitle1 = function () {
+                $('.bgFooter .headline .box1 h2').addClass("h2ActiveFooter");
+            };
+            setTimeout(footerTitle1, 100);
+            
+            var footerTitle2 = function () {
+                $('.bgFooter .headline .box2 h2').addClass("h2ActiveFooter");
+            };
+            setTimeout(footerTitle2, 200);
+
+            var footerTitle3 = function () {
+                $('.bgFooter .headline .box3 h2').addClass("h2ActiveFooter");
+            };
+            setTimeout(footerTitle3, 300);
+
+            var footerCTAs = function () {
+                $('.bgFooter .headline .box').addClass("boxActive");
+                $('.bgFooter .headline .defaultCTA').css("opacity", '1');
+                $('.bgFooter .ctas').css("opacity", '1');
+            };
+            setTimeout(footerCTAs, 700);
+
+            var copyrightShow = function () {
+                $('.bgFooter .copyright').css("opacity" , "1");
+            };
+            setTimeout(copyrightShow, 1000);
+        } 
+
+        
     });
 });
 

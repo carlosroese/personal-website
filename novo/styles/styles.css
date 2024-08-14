@@ -165,14 +165,18 @@ svg {
     height: 86px;
     transition: 2.5s;
     left: calc(50% - 150px);
-    top: calc(50% - 43px); }
+    top: calc(50% - 43px);
+    will-change: transform;
+    image-rendering: optimizeQuality; }
     .startAnimation .logoSpace .pathLeft {
       position: absolute;
       width: 86px;
       fill: var(--neon);
       opacity: 0;
       transition: 0.8s;
-      left: 0; }
+      left: 0;
+      will-change: transform;
+      image-rendering: optimizeQuality; }
     .startAnimation .logoSpace .pathRight {
       position: absolute;
       width: 86px;
@@ -180,7 +184,9 @@ svg {
       right: 0px;
       top: 22px;
       opacity: 0;
-      transition: 0.8s; }
+      transition: 0.8s;
+      will-change: transform;
+      image-rendering: optimizeQuality; }
     .startAnimation .logoSpace .pathLeftActive {
       opacity: 1;
       left: calc(50% - 70px); }
@@ -189,7 +195,9 @@ svg {
       right: calc(50% - 70px); }
   .startAnimation .logoSpaceActive {
     transform: scale(392) rotate(-15deg);
+    -webkit-transform: scale(392) rotate(-15deg);
     transform-origin: center;
+    -webkit-transform-origin: center;
     margin-left: 821vh;
     margin-top: -218vh; }
 
@@ -436,7 +444,9 @@ svg {
   .about .aboutCarlos {
     margin-top: 5vw;
     margin-left: 27%;
-    display: flex; }
+    display: flex;
+    position: relative;
+    z-index: 1; }
     .about .aboutCarlos p {
       font-family: "Medium_Narrow";
       font-size: 2vw;
@@ -447,7 +457,7 @@ svg {
       height: 12vw;
       object-fit: cover;
       transform: rotate(13deg);
-      margin-left: 1vw; }
+      margin-left: -1vw; }
 
 .curveArrow {
   height: 17vw;
@@ -719,16 +729,16 @@ svg {
   margin: 0 auto;
   position: relative;
   padding-top: 10vw;
-  display: ruby-text;
   z-index: 1; }
   .bgClients .headline {
-    width: 40%;
+    width: 38vw;
     position: sticky;
     top: 6vw;
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateY(-55deg) rotateX(-12deg);
     transition: 2s;
-    margin-left: -20vw; }
+    margin-left: -20vw;
+    height: 12vw; }
     .bgClients .headline h2 {
       line-height: 90%;
       margin: 0 auto;
@@ -742,7 +752,8 @@ svg {
       margin-left: 13vw;
       transform: rotate(-4deg);
       float: left;
-      display: block; }
+      display: block;
+      position: absolute; }
       .bgClients .headline .box .freehand {
         font-size: 2vw;
         font-family: "Trashhand";
@@ -754,10 +765,11 @@ svg {
     margin-left: 0;
     transform: perspective(1000px) rotateY(0) rotateX(0); }
   .bgClients .gridLogos {
-    width: 55%;
+    width: 47vw;
     display: flex;
     flex-wrap: wrap;
-    float: right; }
+    margin-left: 45vw;
+    margin-top: -12vw; }
     .bgClients .gridLogos div {
       width: 33.3333%;
       height: 12vw;
@@ -791,21 +803,31 @@ svg {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .bgFooter .headline h2 {
-      color: var(--neon);
-      font-family: "Black_Narrow";
-      line-height: 90%;
-      text-align: center;
-      z-index: 1;
-      text-transform: uppercase;
-      font-size: 7.5vw; }
+    .bgFooter .headline .boxH2 {
+      overflow: hidden;
+      position: relative;
+      height: 7vw; }
+      .bgFooter .headline .boxH2 h2 {
+        color: var(--neon);
+        font-family: "Black_Narrow";
+        line-height: 90%;
+        text-align: center;
+        z-index: 1;
+        text-transform: uppercase;
+        font-size: 7.5vw;
+        margin-top: 10vw;
+        transition: 1s; }
+      .bgFooter .headline .boxH2 .h2ActiveFooter {
+        margin-top: 0; }
     .bgFooter .headline .box {
       background: var(--red);
       padding: 0.6vw 1.2vw;
-      margin-top: -1vw;
+      margin-top: 5vw;
       transform: rotate(-4deg);
       z-index: 1;
-      position: relative; }
+      position: relative;
+      transition: 0.5s;
+      opacity: 0; }
       .bgFooter .headline .box .freehand {
         font-size: 2vw;
         font-family: "Trashhand";
@@ -813,9 +835,13 @@ svg {
         margin: 0 auto;
         display: block;
         -webkit-font-smoothing: antialiased; }
+    .bgFooter .headline .boxActive {
+      margin-top: -1vw;
+      opacity: 1; }
     .bgFooter .headline .defaultCTA {
       transform: scale(2);
-      margin-top: 3vw; }
+      margin-top: 3vw;
+      opacity: 0; }
   .bgFooter .ctas {
     display: flex;
     align-items: center;
@@ -823,6 +849,8 @@ svg {
     margin-top: 4vw;
     position: relative;
     z-index: 3;
+    opacity: 0;
+    transition: 0.5s;
     -webkit-font-smoothing: antialiased; }
     .bgFooter .ctas .lastContact {
       font-family: "Bold_Narrow";
@@ -843,7 +871,9 @@ svg {
     z-index: 3;
     position: absolute;
     bottom: 0;
-    left: 4vw; }
+    left: 4vw;
+    opacity: 0;
+    transition: 0.5s; }
     .bgFooter .copyright .copyLeft {
       font-family: "Medium_Narrow";
       color: #fff;
