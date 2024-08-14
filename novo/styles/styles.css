@@ -88,7 +88,7 @@ html {
   -webkit-overflow-scrolling: touch;
   background-color: var(--neon); }
   html::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
     height: 10px; }
   html::-webkit-scrollbar-track {
     background-color: var(--escuro); }
@@ -385,9 +385,9 @@ svg {
     opacity: 0; }
 
 .about {
-  width: calc(100% - 8vw);
-  margin: 13vw auto 0 auto;
-  padding-top: 7vw;
+  width: 100vw;
+  margin: 0 auto 0 auto;
+  padding-top: 20vw;
   position: relative;
   z-index: 1;
   overflow: hidden; }
@@ -396,6 +396,7 @@ svg {
     text-transform: uppercase;
     line-height: 100%;
     width: 40vw;
+    margin-left: 4vw;
     transition: opacity 0.3s ease-in-out;
     white-space: pre-wrap;
     height: 20vh;
@@ -426,12 +427,14 @@ svg {
     font-size: 2vw;
     margin-top: 11vw;
     color: var(--escuro);
-    -webkit-font-smoothing: antialiased; }
+    -webkit-font-smoothing: antialiased;
+    margin-left: 4vw; }
   .about .big15Years {
-    width: 100%;
+    width: 92vw;
     position: relative;
     height: 22vw;
-    z-index: 1; }
+    z-index: 1;
+    margin-left: 4vw; }
     .about .big15Years .myPicture {
       object-position: center;
       object-fit: cover;
@@ -1017,23 +1020,26 @@ svg {
     padding-top: 0;
     margin: 0 auto; }
     .about #animatedText {
-      width: 100%;
+      width: 95vw;
       font-size: 7vw; }
     .about .freehand {
       font-size: 6vw;
       margin-top: 20vh;
-      margin-bottom: 2vh; }
-    .about .big15Years .myPicture {
-      right: 0;
-      width: 53vw;
-      height: 66vw;
-      margin-top: -10vh; }
+      margin-bottom: 2vh;
+      margin-left: 5vw; }
+    .about .big15Years {
+      margin-left: 5vw; }
+      .about .big15Years .myPicture {
+        right: 0;
+        width: 53vw;
+        height: 66vw;
+        margin-top: -10vh; }
     .about .freehandred {
       font-size: 5.5vw; }
     .about .aboutCarlos {
       margin-top: 15vh;
-      margin-left: 0;
-      margin-bottom: 10vh; }
+      margin-bottom: 10vh;
+      margin-left: 5vw; }
       .about .aboutCarlos p {
         width: 55vw;
         font-size: 5vw; }

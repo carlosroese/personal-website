@@ -148,7 +148,7 @@ html {
     background-color: var(--neon);
 
     &::-webkit-scrollbar {
-        width: 8px;
+        width: 10px;
         height: 10px;
     }
 
@@ -556,9 +556,9 @@ svg {
 }
 
 .about {
-    width: calc(100% - 8vw);
-    margin: 13vw auto 0 auto;
-    padding-top: 7vw;
+    width: 100vw;
+    margin: 0 auto 0 auto;
+    padding-top: 20vw;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -567,6 +567,7 @@ svg {
         text-transform: uppercase;
         line-height: 100%;
         width: 40vw;
+        margin-left: 4vw;
         transition: opacity 0.3s ease-in-out;
         white-space: pre-wrap;
         height: 20vh;
@@ -615,14 +616,15 @@ svg {
         margin-top: 11vw;
         color: var(--escuro);
         -webkit-font-smoothing: antialiased;
+        margin-left: 4vw;
     }
 
     .big15Years {
-        width: 100%;
+        width: 92vw;
         position: relative;
         height: 22vw;
         z-index: 1;
-
+        margin-left: 4vw;
         .myPicture {
             object-position: center;
             object-fit: cover;
@@ -1450,7 +1452,7 @@ svg {
         margin: 0 auto;
 
         #animatedText {
-            width: 100%;
+            width: 95vw;
             font-size: 7vw;
         }
 
@@ -1458,9 +1460,11 @@ svg {
             font-size: 6vw;
             margin-top: 20vh;
             margin-bottom: 2vh;
+            margin-left: 5vw;
         }
 
         .big15Years {
+            margin-left: 5vw;
             .myPicture {
                 right: 0;
                 width: 53vw;
@@ -1475,9 +1479,8 @@ svg {
 
         .aboutCarlos {
             margin-top: 15vh;
-            margin-left: 0;
             margin-bottom: 10vh;
-
+            margin-left: 5vw;
             p {
                 width: 55vw;
                 font-size: 5vw;
