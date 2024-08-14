@@ -1640,4 +1640,42 @@ svg {
             }
         }
     }
+    .bgClients{
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        .headline{
+            width: 100%;
+            position: relative;
+            top: unset;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2{
+                font-size: 10vw;
+                font-family: "ExtraBold_Narrow";
+                letter-spacing: -1px;
+                text-align: center;
+            }
+            .box{
+                position: relative;
+                float: unset;
+                text-align: center;
+                margin-left: 0;
+                padding: 2vw 3vw;
+                .freehand{
+                    font-size: 5vw;
+                }
+            }
+        }
+        .gridLogos{
+            width: 100%;
+            margin-left: 0;
+            margin-top: 5vh;
+            div{
+                width: 50%;
+                height: 12vh;
+            }
+        }
+    }
 }

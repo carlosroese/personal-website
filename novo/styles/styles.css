@@ -1140,6 +1140,38 @@ svg {
             font-size: 9vw;
             font-family: "ExtraBold_Narrow";
             letter-spacing: -1px;
-            width: 100%; } }
+            width: 100%; }
+
+  .bgClients {
+    padding-top: 10vh;
+    padding-bottom: 10vh; }
+    .bgClients .headline {
+      width: 100%;
+      position: relative;
+      top: unset;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .bgClients .headline h2 {
+        font-size: 10vw;
+        font-family: "ExtraBold_Narrow";
+        letter-spacing: -1px;
+        text-align: center; }
+      .bgClients .headline .box {
+        position: relative;
+        float: unset;
+        text-align: center;
+        margin-left: 0;
+        padding: 2vw 3vw; }
+        .bgClients .headline .box .freehand {
+          font-size: 5vw; }
+    .bgClients .gridLogos {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 5vh; }
+      .bgClients .gridLogos div {
+        width: 50%;
+        height: 12vh; } }
 
 /*# sourceMappingURL=styles.css.map */
