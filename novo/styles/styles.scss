@@ -1317,6 +1317,19 @@ svg {
 }
 
 @media only screen and (max-width: 1023px) {
+    html{
+        &::-webkit-scrollbar {
+            width: unset;
+            height: unset;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+    }
     .header {
         width: 90vw;
         left: 5vw;
