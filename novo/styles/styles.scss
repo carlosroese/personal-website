@@ -235,7 +235,7 @@ svg {
         position: relative;
         height: 86px;
         transition: 2.5s;
-        left: calc(50% - 150px);
+        left: calc(50% - 175px);
         top: calc(50% - 43px);
         will-change: transform;
         image-rendering: optimizeQuality;
@@ -477,6 +477,10 @@ svg {
             font-family: "Medium_Narrow";
             opacity: 0;
             transition: 0.5s;
+
+            span {
+                font-family: "Medium_Narrow";
+            }
         }
 
         .right {
@@ -1334,7 +1338,7 @@ svg {
 
         img {
             height: 35vw;
-            left:calc(50% - 17.5vw);
+            left: calc(50% - 17.5vw);
             margin-top: -60vh;
         }
 
@@ -1351,11 +1355,13 @@ svg {
                 letter-spacing: -2px;
                 margin-top: 18vw;
                 color: red;
+
                 span {
                     display: none;
                     font-family: "ExtraBold_Narrow";
                 }
-                i{
+
+                i {
                     font-family: "ExtraBold_Narrow";
                 }
             }
@@ -1376,12 +1382,15 @@ svg {
         }
 
         .smallText {
-            bottom: 10vh;
+            bottom: 12vh;
             margin-top: 0;
             justify-content: center;
 
             p {
                 font-size: 4vw;
+                span{
+                    display: none;
+                }
             }
 
             .left {
@@ -1399,6 +1408,14 @@ svg {
             .rightActive {
                 margin-right: 0;
             }
+        }
+    }
+    .startAnimation{
+        .logoSpace{
+            // transform: scale(0.8);
+        }
+        .logoSpaceActive{
+
         }
     }
 }

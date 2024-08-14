@@ -164,7 +164,7 @@ svg {
     position: relative;
     height: 86px;
     transition: 2.5s;
-    left: calc(50% - 150px);
+    left: calc(50% - 175px);
     top: calc(50% - 43px);
     will-change: transform;
     image-rendering: optimizeQuality; }
@@ -334,6 +334,8 @@ svg {
       font-family: "Medium_Narrow";
       opacity: 0;
       transition: 0.5s; }
+      .hero .smallText p span {
+        font-family: "Medium_Narrow"; }
     .hero .smallText .right {
       margin-right: 10vw; }
     .hero .smallText .rightActive {
@@ -972,11 +974,13 @@ svg {
     .hero .defaultCTA {
       margin-top: 4vh; }
     .hero .smallText {
-      bottom: 10vh;
+      bottom: 12vh;
       margin-top: 0;
       justify-content: center; }
       .hero .smallText p {
         font-size: 4vw; }
+        .hero .smallText p span {
+          display: none; }
       .hero .smallText .left {
         margin-left: 0; }
       .hero .smallText .right {
