@@ -947,14 +947,18 @@ svg {
     .hero img {
       height: 25vw;
       left: calc(50% - 12.5vw);
-      margin-top: -40vh; }
+      margin-top: -60vh; }
     .hero .avatarActive {
       margin-top: -12vh; }
     .hero .contH2 {
       height: 12vw; }
       .hero .contH2 h2 {
         font-size: 13vw;
-        font-family: "ExtraBold_Narrow"; }
+        font-family: "ExtraBold_Narrow";
+        letter-spacing: -1px; }
+        .hero .contH2 h2 span {
+          display: none;
+          font-family: "ExtraBold_Narrow"; }
     .hero .sub-h1 {
       font-size: 7vw;
       margin-top: 10vh; }

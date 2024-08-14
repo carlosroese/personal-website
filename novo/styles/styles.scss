@@ -457,7 +457,8 @@ svg {
         z-index: 0;
         transition: 1s;
     }
-    .avatarActive{
+
+    .avatarActive {
         margin-top: -9vw;
     }
 
@@ -515,7 +516,8 @@ svg {
             width: 100%;
             margin-top: 12vw;
             transition: 0.5s;
-            span{
+
+            span {
                 font-family: "Black_Narrow";
             }
 
@@ -535,7 +537,8 @@ svg {
         transition: 1s;
         opacity: 0;
     }
-    .sub-h1Active{
+
+    .sub-h1Active {
         margin-top: 2vw;
         opacity: 1;
     }
@@ -1309,6 +1312,7 @@ svg {
     .header {
         width: calc(100vw - 10vw);
         left: 5vw;
+
         .logo {
             width: 70px;
         }
@@ -1323,55 +1327,71 @@ svg {
     .headerAtive {
         margin-top: 4vw;
     }
-    .hero{
+
+    .hero {
         height: 100vh;
         padding-top: 31vh;
-        img{
+
+        img {
             height: 25vw;
             left: calc(50% - 12.5vw);
-            margin-top: -40vh;
+            margin-top: -60vh;
         }
-        .avatarActive{
+
+        .avatarActive {
             margin-top: -12vh;
         }
-        .contH2{
+
+        .contH2 {
             height: 12vw;
-            h2{
+
+            h2 {
                 font-size: 13vw;
                 font-family: "ExtraBold_Narrow";
-                // span{
-                //     display: none;
-                // }
+                letter-spacing: -1px;
+                span {
+                    display: none;
+                    font-family: "ExtraBold_Narrow";
+                }
             }
         }
-        .sub-h1{
+
+        .sub-h1 {
             font-size: 7vw;
             margin-top: 10vh;
         }
-        .sub-h1Active{
+
+        .sub-h1Active {
             margin-top: 5vw;
             opacity: 1;
         }
-        .defaultCTA{
+
+        .defaultCTA {
             margin-top: 4vh;
         }
-        .smallText{
+
+        .smallText {
             position: relative;
             margin-top: 0;
             justify-content: center;
-            p{
+
+            p {
                 font-size: 4vw;
             }
-            .left{
+
+            .left {
                 margin-left: 0;
             }
-            .right{
+
+            .right {
                 margin-right: 0;
             }
-            .leftActive{
+
+            .leftActive {
                 margin-left: 0;
             }
-            .rightActive{
+
+            .rightActive {
                 margin-right: 0;
             }
         }
