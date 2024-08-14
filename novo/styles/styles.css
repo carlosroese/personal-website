@@ -1176,7 +1176,10 @@ svg {
 
   .bgFooter {
     margin-top: 0;
-    padding-top: 20vh; }
+    padding-top: 20vh;
+    height: 110vh; }
+    .bgFooter .bannerVideo {
+      height: 110vh; }
     .bgFooter .headline {
       width: 100%; }
       .bgFooter .headline .boxH2 {
@@ -1184,7 +1187,8 @@ svg {
         .bgFooter .headline .boxH2 h2 {
           font-size: 13vw;
           font-family: "ExtraBold_Narrow";
-          letter-spacing: -1px; }
+          letter-spacing: -1px;
+          margin-top: 14vw; }
       .bgFooter .headline .box {
         padding: 2vw 3vw; }
         .bgFooter .headline .box .freehand {

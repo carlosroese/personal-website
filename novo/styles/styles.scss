@@ -1694,7 +1694,10 @@ svg {
     .bgFooter {
         margin-top: 0;
         padding-top: 20vh;
-
+        height: 110vh;
+        .bannerVideo{
+            height: 110vh;
+        }
         .headline {
             width: 100%;
 
@@ -1705,6 +1708,7 @@ svg {
                     font-size: 13vw;
                     font-family: "ExtraBold_Narrow";
                     letter-spacing: -1px;
+                    margin-top: 14vw;
                 }
             }
 
