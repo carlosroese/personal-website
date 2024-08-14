@@ -1518,10 +1518,10 @@ svg {
 
     .ctaBreak {
         padding: 0;
-        margin-top: 5vh;
+        margin-top: 7vh 0;
         width: calc(100% - 8vw);
         justify-content: center;
-        height: 85vh;
+        height: 75vh;
 
         .freehandActive {
             font-size: 10vw;
@@ -1592,7 +1592,7 @@ svg {
                 .boxes {
                     width: 100%;
                     margin-bottom: 5vw;
-                    padding: 5vh;
+                    padding: 4vh;
                     height: 70vw;
                     h3 {
                         font-family: "ExtraBold_Narrow";
@@ -1600,14 +1600,14 @@ svg {
                     }
 
                     p {
-                        font-size: 5vw;
+                        font-size: 6vw;
                         width: 100%;
                     }
                 }
 
                 .headlines {
                     margin-bottom:10vw;
-                    padding: 0 5vh;
+                    padding: 0;
                     height: auto;
                     .freehand {
                         font-size: 6vw;

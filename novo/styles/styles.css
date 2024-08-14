@@ -1057,10 +1057,10 @@ svg {
 
   .ctaBreak {
     padding: 0;
-    margin-top: 5vh;
+    margin-top: 7vh 0;
     width: calc(100% - 8vw);
     justify-content: center;
-    height: 85vh; }
+    height: 75vh; }
     .ctaBreak .freehandActive {
       font-size: 10vw; }
     .ctaBreak .mask {
@@ -1110,17 +1110,17 @@ svg {
         .bgServices .sticky .scrollSection .boxes {
           width: 100%;
           margin-bottom: 5vw;
-          padding: 5vh;
+          padding: 4vh;
           height: 70vw; }
           .bgServices .sticky .scrollSection .boxes h3 {
             font-family: "ExtraBold_Narrow";
             letter-spacing: -1px; }
           .bgServices .sticky .scrollSection .boxes p {
-            font-size: 5vw;
+            font-size: 6vw;
             width: 100%; }
         .bgServices .sticky .scrollSection .headlines {
           margin-bottom: 10vw;
-          padding: 0 5vh;
+          padding: 0;
           height: auto; }
           .bgServices .sticky .scrollSection .headlines .freehand {
             font-size: 6vw;
