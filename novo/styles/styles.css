@@ -1176,7 +1176,7 @@ svg {
 
   .bgFooter {
     margin-top: 0;
-    padding-top: 25vh; }
+    padding-top: 20vh; }
     .bgFooter .headline {
       width: 100%; }
       .bgFooter .headline .boxH2 {
@@ -1208,13 +1208,14 @@ svg {
         font-size: 4vw; }
       .bgFooter .copyright .backTop {
         font-size: 4vw;
-        margin-top: 2vh;
-        margin-bottom: 2vh; }
+        margin-top: 3vh;
+        margin-bottom: 3vh; }
       .bgFooter .copyright .social {
         width: 100%;
-        justify-content: center; }
+        justify-content: space-between;
+        border-top: 1px solid #fff;
+        padding: 3vh; }
         .bgFooter .copyright .social a {
-          font-size: 4vw;
-          margin-left: 5vw; } }
+          font-size: 4vw; } }
 
 /*# sourceMappingURL=styles.css.map */

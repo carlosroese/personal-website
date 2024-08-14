@@ -1693,7 +1693,7 @@ svg {
 
     .bgFooter {
         margin-top: 0;
-        padding-top: 25vh;
+        padding-top: 20vh;
 
         .headline {
             width: 100%;
@@ -1746,17 +1746,17 @@ svg {
 
             .backTop {
                 font-size: 4vw;
-                margin-top: 2vh;
-                margin-bottom: 2vh;
+                margin-top: 3vh;
+                margin-bottom: 3vh;
             }
 
             .social {
                 width: 100%;
-                justify-content: center;
-
+                justify-content: space-between;
+                border-top:1px solid #fff;
+                padding: 3vh;
                 a {
                     font-size: 4vw;
-                    margin-left: 5vw;
                 }
             }
         }
