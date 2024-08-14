@@ -123,14 +123,20 @@ $(document).ready(function () {
         }
         //END HEADER CHANGING OF COLOR ON SCROLL
 
+
         //Hero Headlines as you scroll
+        if ($(window).width() < 769) {
+            var myPictureSpeed = 10;
+        }else{
+            var myPictureSpeed = 2;
+        }
         $(".hero .step1").css("margin-left", - (scrollval / 1) + 'px');
         $(".hero .step2").css("margin-right", - (scrollval / 1) + 'px');
         $(".hero .step3").css("margin-left", - (scrollval / 1) + 'px');
 
 
         //About Section Animations as you scroll
-        $(".about .big15Years .myPicture").css("top", (0 - (scrollval / 2)) + 'px');
+        $(".about .big15Years .myPicture").css("top", (0 - (scrollval / myPictureSpeed)) + 'px');
         $(".about .freehandred").css("rotate", (-(scrollval / 200)) + 'deg');
         $(".about .freehandred").css("margin-top", (scrollval / 15) + 'px');
 
