@@ -126,7 +126,7 @@ $(document).ready(function () {
 
         //Hero Headlines as you scroll
         if ($(window).width() < 769) {
-            var myPictureSpeed = 10;
+            var myPictureSpeed = 7;
         }else{
             var myPictureSpeed = 2;
         }
