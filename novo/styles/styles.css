@@ -309,7 +309,10 @@ svg {
   display: flex;
   flex-direction: column;
   padding-top: 15.5vw;
-  z-index: 1; }
+  padding-bottom: 1vw;
+  -webkit-font-smoothing: antialiased;
+  z-index: 1;
+  overflow: hidden; }
   .hero img {
     height: 10.5vw;
     position: absolute;
@@ -386,7 +389,8 @@ svg {
   margin: 13vw auto 0 auto;
   padding-top: 7vw;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  overflow: hidden; }
   .about #animatedText {
     font-size: 2.8vw;
     text-transform: uppercase;
@@ -1176,19 +1180,19 @@ svg {
 
   .bgFooter {
     margin-top: 0;
-    padding-top: 20vh;
+    padding-top: 23vh;
     height: 110vh; }
     .bgFooter .bannerVideo {
       height: 110vh; }
     .bgFooter .headline {
       width: 100%; }
       .bgFooter .headline .boxH2 {
-        height: 12vw; }
+        height: 15vw; }
         .bgFooter .headline .boxH2 h2 {
-          font-size: 13vw;
+          font-size: 16vw;
           font-family: "ExtraBold_Narrow";
           letter-spacing: -1px;
-          margin-top: 14vw; }
+          margin-top: 17vw; }
       .bgFooter .headline .box {
         padding: 2vw 3vw; }
         .bgFooter .headline .box .freehand {
