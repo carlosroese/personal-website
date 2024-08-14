@@ -1056,9 +1056,11 @@ svg {
         margin-bottom: 5vw; }
 
   .ctaBreak {
-    padding: 18vh 0;
+    padding: 0;
     margin-top: 5vh;
-    width: calc(100% - 8vw); }
+    width: calc(100% - 8vw);
+    justify-content: center;
+    height: 85vh; }
     .ctaBreak .freehandActive {
       font-size: 10vw; }
     .ctaBreak .mask {
