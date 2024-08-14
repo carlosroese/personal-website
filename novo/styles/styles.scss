@@ -1317,19 +1317,21 @@ svg {
 }
 
 @media only screen and (max-width: 1023px) {
-    html{
+    html {
         &::-webkit-scrollbar {
             width: unset;
             height: unset;
         }
+
         &::-webkit-scrollbar-track {
             background-color: transparent;
         }
-    
+
         &::-webkit-scrollbar-thumb {
             background-color: transparent;
         }
     }
+
     .header {
         width: 90vw;
         left: 5vw;
@@ -1430,6 +1432,7 @@ svg {
 
     .startAnimation {
         width: 100vw;
+
         .logoSpace {
             transform: scale(0.7) rotate(0deg);
             -webkit-transform: scale(0.7) rotate(0deg);
@@ -1609,6 +1612,7 @@ svg {
                     margin-bottom: 5vw;
                     padding: 4vh;
                     height: 70vw;
+
                     h3 {
                         font-family: "ExtraBold_Narrow";
                         letter-spacing: -1px;
@@ -1621,9 +1625,10 @@ svg {
                 }
 
                 .headlines {
-                    margin-bottom:10vw;
+                    margin-bottom: 10vw;
                     padding: 0;
                     height: auto;
+
                     .freehand {
                         font-size: 6vw;
                         width: 100%;
@@ -1634,16 +1639,18 @@ svg {
                         font-family: "ExtraBold_Narrow";
                         letter-spacing: -1px;
                         width: 100%;
-                        
+
                     }
                 }
             }
         }
     }
-    .bgClients{
+
+    .bgClients {
         padding-top: 10vh;
         padding-bottom: 10vh;
-        .headline{
+
+        .headline {
             width: 100%;
             position: relative;
             top: unset;
@@ -1651,80 +1658,105 @@ svg {
             display: flex;
             flex-direction: column;
             align-items: center;
-            h2{
+
+            h2 {
                 font-size: 10vw;
                 font-family: "ExtraBold_Narrow";
                 letter-spacing: -1px;
                 text-align: center;
             }
-            .box{
+
+            .box {
                 position: relative;
                 float: unset;
                 text-align: center;
                 margin-left: 0;
                 padding: 2vw 3vw;
-                .freehand{
+
+                .freehand {
                     font-size: 5vw;
                 }
             }
         }
-        .gridLogos{
+
+        .gridLogos {
             width: 100%;
             margin-left: 0;
             margin-top: 5vh;
-            div{
+
+            div {
                 width: 50%;
                 height: 12vh;
             }
         }
     }
-    .bgFooter{
+
+    .bgFooter {
         margin-top: 0;
         padding-top: 25vh;
-        .headline{
+
+        .headline {
             width: 100%;
-            .boxH2{
+
+            .boxH2 {
                 height: 12vw;
-                h2{
+
+                h2 {
                     font-size: 13vw;
+                    font-family: "ExtraBold_Narrow";
+                    letter-spacing: -1px;
                 }
             }
-            .box{
+
+            .box {
                 padding: 2vw 3vw;
-                .freehand{
+
+                .freehand {
                     font-size: 5vw;
                 }
             }
-            .defaultCTA{
+
+            .defaultCTA {
                 transform: scale(1);
             }
         }
-        .ctas{
+
+        .ctas {
             margin-top: 5vh;
-            .lastContact{
+
+            .lastContact {
                 font-size: 5vw;
                 margin-bottom: 2vh;
             }
+            p{
+                font-family: "Bold_Narrow";
+            }
         }
-        .copyright{
+
+        .copyright {
             flex-direction: column;
             justify-content: center;
-            margin: 3vh auto;
-            .copyLeft{
+            margin: 0 auto 5vh auto;
+
+            .copyLeft {
                 width: 100%;
                 text-align: center;
                 font-size: 4vw;
             }
-            .backTop{
+
+            .backTop {
                 font-size: 4vw;
                 margin-top: 2vh;
                 margin-bottom: 2vh;
             }
-            .social{
+
+            .social {
                 width: 100%;
                 justify-content: center;
-                a{
+
+                a {
                     font-size: 4vw;
+                    margin-left: 5vw;
                 }
             }
         }
