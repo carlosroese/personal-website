@@ -226,20 +226,22 @@ svg {
       margin-right: 45px;
       position: relative;
       overflow: hidden;
-      height: 26px; }
+      height: 20px; }
       .header .menus .link p {
         font-size: 20px;
         font-family: "ExtraBold_Narrow";
         text-transform: uppercase;
         color: var(--escuro);
         letter-spacing: 0.5px;
-        transition: 0.3s; }
+        transition: 0.3s;
+        line-height: 100%;
+        position: relative; }
       .header .menus .link .second {
         position: absolute; }
       .header .menus .link:hover p {
-        margin-top: -30px; }
+        margin-top: -20px; }
       .header .menus .link:hover .second {
-        margin-top: 5px; }
+        margin-top: 0; }
 
 .headerAtive {
   margin-top: 2vw; }
@@ -266,7 +268,8 @@ svg {
     display: flex;
     align-items: center;
     top: 0;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    position: relative; }
   .defaultCTA .second {
     position: absolute;
     color: var(--neon);
@@ -306,7 +309,6 @@ svg {
   display: flex;
   flex-direction: column;
   padding-top: 15.5vw;
-  -webkit-font-smoothing: antialiased;
   z-index: 1; }
   .hero img {
     height: 10.5vw;
@@ -316,6 +318,8 @@ svg {
     margin-top: -40vw;
     z-index: 0;
     transition: 1s; }
+  .hero .avatarActive {
+    margin-top: -9vw; }
   .hero .smallText {
     position: absolute;
     width: 100%;
@@ -365,9 +369,13 @@ svg {
     margin-top: 25vh;
     transition: 1s;
     opacity: 0; }
+  .hero .sub-h1Active {
+    margin-top: 2vw;
+    opacity: 1; }
   .hero .defaultCTA {
     margin: 3vh auto 0 auto;
-    transform: scale(1.2); }
+    transform: scale(1.2);
+    opacity: 0; }
 
 .about {
   width: calc(100% - 8vw);
@@ -375,27 +383,33 @@ svg {
   padding-top: 7vw;
   position: relative;
   z-index: 1; }
-  .about h2 {
+  .about #animatedText {
     font-size: 2.8vw;
     text-transform: uppercase;
     line-height: 100%;
     width: 40vw;
     transition: opacity 0.3s ease-in-out;
-    opacity: 0;
     white-space: pre-wrap;
-    height: 20vh; }
-    .about h2 span {
-      font-family: "Bold_Narrow"; }
-    .about h2 .letter {
+    height: 20vh;
+    font-family: "Medium_Narrow";
+    -webkit-font-smoothing: antialiased; }
+    .about #animatedText span {
+      font-family: "Medium_Narrow";
+      -webkit-font-smoothing: antialiased; }
+    .about #animatedText .letter {
       display: inline;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 0.1s forwards; }
+      .about #animatedText .letter:nth-child(-n + 21) {
+        font-family: "ExtraBold_Narrow"; }
+      .about #animatedText .letter:nth-last-child(-n + 25) {
+        font-family: "ExtraBold_Narrow_Italic"; }
 @keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0); } }
-    .about h2 i {
+    .about #animatedText i {
       font-family: "Bold_Narrow_Italic"; }
   .about .visible {
     opacity: 1; }
@@ -452,6 +466,8 @@ svg {
       font-size: 2vw;
       color: var(--escuro);
       width: 30vw; }
+      .about .aboutCarlos p b {
+        font-family: "Bold_Narrow"; }
     .about .aboutCarlos img {
       width: 12vw;
       height: 12vw;
@@ -519,7 +535,7 @@ svg {
     margin-left: -20vw; }
     .projects .headline h2 {
       text-align: center;
-      width: 45vw;
+      width: 47vw;
       line-height: 90%;
       margin: 0 auto;
       font-size: 4.5vw;
@@ -910,5 +926,53 @@ svg {
         margin-left: 2vw; }
         .bgFooter .copyright .social a:hover {
           color: var(--neon); }
+
+@media only screen and (max-width: 1023px) {
+  .header {
+    width: calc(100vw - 10vw);
+    left: 5vw; }
+    .header .logo {
+      width: 70px; }
+    .header .menus .link {
+      display: none; }
+
+  .headerAtive {
+    margin-top: 4vw; }
+
+  .hero {
+    height: 100vh;
+    padding-top: 31vh; }
+    .hero img {
+      height: 25vw;
+      left: calc(50% - 12.5vw);
+      margin-top: -40vh; }
+    .hero .avatarActive {
+      margin-top: -12vh; }
+    .hero .contH2 {
+      height: 12vw; }
+      .hero .contH2 h2 {
+        font-size: 13vw; }
+    .hero .sub-h1 {
+      font-size: 7vw;
+      margin-top: 10vh; }
+    .hero .sub-h1Active {
+      margin-top: 5vw;
+      opacity: 1; }
+    .hero .defaultCTA {
+      margin-top: 4vh; }
+    .hero .smallText {
+      position: relative;
+      margin-top: 0;
+      justify-content: center; }
+      .hero .smallText p {
+        font-size: 4vw; }
+      .hero .smallText .left {
+        margin-left: 0; }
+      .hero .smallText .right {
+        margin-right: 0; }
+      .hero .smallText .leftActive {
+        margin-left: 0; }
+      .hero .smallText .rightActive {
+        margin-right: 0; } }
 
 /*# sourceMappingURL=styles.css.map */

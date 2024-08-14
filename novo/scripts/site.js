@@ -81,13 +81,13 @@ $(document).ready(function () {
     setTimeout(headline3, 1900);
 
     var subH1 = function () {
-        $('.hero .sub-h1').css("margin-top", "2vw");
-        $('.hero .sub-h1').css("opacity", "1");
+        $('.hero .sub-h1').addClass("sub-h1Active");
+        $('.hero .defaultCTA').css("opacity","1");
     };
     setTimeout(subH1, 2000);
 
     var avatar = function () {
-        $('.hero img').css("margin-top", "-9vw");
+        $('.hero img').addClass("avatarActive");
     };
     setTimeout(avatar, 2300);
 

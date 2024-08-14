@@ -316,7 +316,7 @@ svg {
             margin-right: 45px;
             position: relative;
             overflow: hidden;
-            height: 26px;
+            height: 20px;
 
             p {
                 font-size: 20px;
@@ -325,6 +325,8 @@ svg {
                 color: var(--escuro);
                 letter-spacing: 0.5px;
                 transition: 0.3s;
+                line-height: 100%;
+                position: relative;
             }
 
             .second {
@@ -333,11 +335,11 @@ svg {
 
             &:hover {
                 p {
-                    margin-top: -30px;
+                    margin-top: -20px;
                 }
 
                 .second {
-                    margin-top: 5px;
+                    margin-top: 0;
                 }
             }
         }
@@ -371,6 +373,7 @@ svg {
     padding: 0 25px;
     position: relative;
     overflow: hidden;
+    // -webkit-font-smoothing: antialiased;
 
     .label {
         font-size: 20px;
@@ -383,6 +386,7 @@ svg {
         align-items: center;
         top: 0;
         letter-spacing: 0.5px;
+        position: relative;
     }
 
     .second {
@@ -441,7 +445,7 @@ svg {
     display: flex;
     flex-direction: column;
     padding-top: 15.5vw;
-    -webkit-font-smoothing: antialiased;
+    // -webkit-font-smoothing: antialiased;
     z-index: 1;
 
     img {
@@ -452,6 +456,9 @@ svg {
         margin-top: -40vw;
         z-index: 0;
         transition: 1s;
+    }
+    .avatarActive{
+        margin-top: -9vw;
     }
 
     .smallText {
@@ -525,10 +532,15 @@ svg {
         transition: 1s;
         opacity: 0;
     }
+    .sub-h1Active{
+        margin-top: 2vw;
+        opacity: 1;
+    }
 
     .defaultCTA {
         margin: 3vh auto 0 auto;
         transform: scale(1.2);
+        opacity: 0;
     }
 }
 
@@ -539,18 +551,20 @@ svg {
     position: relative;
     z-index: 1;
 
-    h2 {
+    #animatedText {
         font-size: 2.8vw;
         text-transform: uppercase;
         line-height: 100%;
         width: 40vw;
         transition: opacity 0.3s ease-in-out;
-        opacity: 0;
         white-space: pre-wrap;
         height: 20vh;
+        font-family: "Medium_Narrow";
+        -webkit-font-smoothing: antialiased;
 
         span {
-            font-family: "Bold_Narrow";
+            font-family: "Medium_Narrow";
+            -webkit-font-smoothing: antialiased;
         }
 
         .letter {
@@ -558,6 +572,14 @@ svg {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeUp 0.1s forwards;
+
+            &:nth-child(-n + 21) {
+                font-family: "ExtraBold_Narrow";
+            }
+
+            &:nth-last-child(-n + 25) {
+                font-family: "ExtraBold_Narrow_Italic";
+            }
         }
 
         @keyframes fadeUp {
@@ -645,6 +667,10 @@ svg {
             font-size: 2vw;
             color: var(--escuro);
             width: 30vw;
+
+            b {
+                font-family: "Bold_Narrow";
+            }
         }
 
         img {
@@ -750,7 +776,7 @@ svg {
 
         h2 {
             text-align: center;
-            width: 45vw;
+            width: 47vw;
             line-height: 90%;
             margin: 0 auto;
             font-size: 4.5vw;
@@ -1271,6 +1297,75 @@ svg {
                 &:hover {
                     color: var(--neon);
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .header {
+        width: calc(100vw - 10vw);
+        left: 5vw;
+        .logo {
+            width: 70px;
+        }
+
+        .menus {
+            .link {
+                display: none;
+            }
+        }
+    }
+
+    .headerAtive {
+        margin-top: 4vw;
+    }
+    .hero{
+        height: 100vh;
+        padding-top: 31vh;
+        img{
+            height: 25vw;
+            left: calc(50% - 12.5vw);
+            margin-top: -40vh;
+        }
+        .avatarActive{
+            margin-top: -12vh;
+        }
+        .contH2{
+            height: 12vw;
+            h2{
+                font-size: 13vw;
+            }
+        }
+        .sub-h1{
+            font-size: 7vw;
+            margin-top: 10vh;
+        }
+        .sub-h1Active{
+            margin-top: 5vw;
+            opacity: 1;
+        }
+        .defaultCTA{
+            margin-top: 4vh;
+        }
+        .smallText{
+            position: relative;
+            margin-top: 0;
+            justify-content: center;
+            p{
+                font-size: 4vw;
+            }
+            .left{
+                margin-left: 0;
+            }
+            .right{
+                margin-right: 0;
+            }
+            .leftActive{
+                margin-left: 0;
+            }
+            .rightActive{
+                margin-right: 0;
             }
         }
     }
