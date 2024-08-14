@@ -1020,8 +1020,9 @@ svg {
     padding-top: 0;
     margin: 0 auto; }
     .about #animatedText {
-      width: 95vw;
-      font-size: 7vw; }
+      width: 90vw;
+      font-size: 7vw;
+      margin-left: 5vw; }
     .about .freehand {
       font-size: 6vw;
       margin-top: 20vh;
@@ -1060,14 +1061,14 @@ svg {
     .projects .headline {
       margin-left: 0; }
       .projects .headline h2 {
-        font-size: 12vw;
+        font-size: 13vw;
         width: 90%;
         font-family: "ExtraBold_Narrow";
         letter-spacing: -1px; }
       .projects .headline .box {
         padding: 2vw 3vw; }
         .projects .headline .box .freehand {
-          font-size: 5vw; }
+          font-size: 7vw; }
     .projects .grid {
       margin-top: 7vw; }
       .projects .grid a {
@@ -1121,7 +1122,7 @@ svg {
         position: relative;
         top: 0;
         height: auto;
-        width: 92vw;
+        width: 90vw;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -1132,22 +1133,24 @@ svg {
           width: 100%;
           margin-bottom: 5vw;
           padding: 4vh;
-          height: 70vw; }
+          height: 50vh; }
           .bgServices .sticky .scrollSection .boxes h3 {
-            font-family: "ExtraBold_Narrow";
-            letter-spacing: -1px; }
+            font-family: "Bold_Narrow";
+            letter-spacing: -1px;
+            font-size: 14vw; }
           .bgServices .sticky .scrollSection .boxes p {
             font-size: 6vw;
             width: 100%; }
         .bgServices .sticky .scrollSection .headlines {
-          margin-bottom: 10vw;
+          margin-bottom: 5vh;
+          margin-top: 5vh;
           padding: 0;
           height: auto; }
           .bgServices .sticky .scrollSection .headlines .freehand {
-            font-size: 6vw;
+            font-size: 7vw;
             width: 100%; }
           .bgServices .sticky .scrollSection .headlines h2 {
-            font-size: 9vw;
+            font-size: 12vw;
             font-family: "ExtraBold_Narrow";
             letter-spacing: -1px;
             width: 100%; }
@@ -1164,7 +1167,7 @@ svg {
       flex-direction: column;
       align-items: center; }
       .bgClients .headline h2 {
-        font-size: 10vw;
+        font-size: 14vw;
         font-family: "ExtraBold_Narrow";
         letter-spacing: -1px;
         text-align: center; }
@@ -1175,14 +1178,17 @@ svg {
         margin-left: 0;
         padding: 2vw 3vw; }
         .bgClients .headline .box .freehand {
-          font-size: 5vw; }
+          font-size: 7vw; }
     .bgClients .gridLogos {
       width: 100%;
       margin-left: 0;
       margin-top: 5vh; }
       .bgClients .gridLogos div {
         width: 50%;
-        height: 12vh; }
+        height: 18vh; }
+        .bgClients .gridLogos div img {
+          width: 60%;
+          height: 23%; }
 
   .bgFooter {
     margin-top: 0;
