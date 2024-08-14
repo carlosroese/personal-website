@@ -1172,6 +1172,44 @@ svg {
       margin-top: 5vh; }
       .bgClients .gridLogos div {
         width: 50%;
-        height: 12vh; } }
+        height: 12vh; }
+
+  .bgFooter {
+    margin-top: 0;
+    padding-top: 25vh; }
+    .bgFooter .headline {
+      width: 100%; }
+      .bgFooter .headline .boxH2 {
+        height: 12vw; }
+        .bgFooter .headline .boxH2 h2 {
+          font-size: 13vw; }
+      .bgFooter .headline .box {
+        padding: 2vw 3vw; }
+        .bgFooter .headline .box .freehand {
+          font-size: 5vw; }
+      .bgFooter .headline .defaultCTA {
+        transform: scale(1); }
+    .bgFooter .ctas {
+      margin-top: 5vh; }
+      .bgFooter .ctas .lastContact {
+        font-size: 5vw;
+        margin-bottom: 2vh; }
+    .bgFooter .copyright {
+      flex-direction: column;
+      justify-content: center;
+      margin: 3vh auto; }
+      .bgFooter .copyright .copyLeft {
+        width: 100%;
+        text-align: center;
+        font-size: 4vw; }
+      .bgFooter .copyright .backTop {
+        font-size: 4vw;
+        margin-top: 2vh;
+        margin-bottom: 2vh; }
+      .bgFooter .copyright .social {
+        width: 100%;
+        justify-content: center; }
+        .bgFooter .copyright .social a {
+          font-size: 4vw; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1678,4 +1678,55 @@ svg {
             }
         }
     }
+    .bgFooter{
+        margin-top: 0;
+        padding-top: 25vh;
+        .headline{
+            width: 100%;
+            .boxH2{
+                height: 12vw;
+                h2{
+                    font-size: 13vw;
+                }
+            }
+            .box{
+                padding: 2vw 3vw;
+                .freehand{
+                    font-size: 5vw;
+                }
+            }
+            .defaultCTA{
+                transform: scale(1);
+            }
+        }
+        .ctas{
+            margin-top: 5vh;
+            .lastContact{
+                font-size: 5vw;
+                margin-bottom: 2vh;
+            }
+        }
+        .copyright{
+            flex-direction: column;
+            justify-content: center;
+            margin: 3vh auto;
+            .copyLeft{
+                width: 100%;
+                text-align: center;
+                font-size: 4vw;
+            }
+            .backTop{
+                font-size: 4vw;
+                margin-top: 2vh;
+                margin-bottom: 2vh;
+            }
+            .social{
+                width: 100%;
+                justify-content: center;
+                a{
+                    font-size: 4vw;
+                }
+            }
+        }
+    }
 }
