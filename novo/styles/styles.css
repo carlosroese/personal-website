@@ -988,6 +988,13 @@ svg {
       .hero .smallText .leftActive {
         margin-left: 0; }
       .hero .smallText .rightActive {
-        margin-right: 0; } }
+        margin-right: 0; }
+
+  .startAnimation .logoSpace {
+    transform: scale(0.7) rotate(0deg);
+    -webkit-transform: scale(0.7) rotate(0deg); }
+  .startAnimation .logoSpaceActive {
+    transform: scale(392) rotate(-15deg);
+    -webkit-transform: scale(392) rotate(-15deg); } }
 
 /*# sourceMappingURL=styles.css.map */

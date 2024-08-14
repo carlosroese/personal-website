@@ -1388,7 +1388,8 @@ svg {
 
             p {
                 font-size: 4vw;
-                span{
+
+                span {
                     display: none;
                 }
             }
@@ -1410,12 +1411,16 @@ svg {
             }
         }
     }
-    .startAnimation{
-        .logoSpace{
-            // transform: scale(0.8);
-        }
-        .logoSpaceActive{
 
+    .startAnimation {
+        .logoSpace {
+            transform: scale(0.7) rotate(0deg);
+            -webkit-transform: scale(0.7) rotate(0deg);
+        }
+
+        .logoSpaceActive {
+            transform: scale(392) rotate(-15deg);
+            -webkit-transform: scale(392) rotate(-15deg);
         }
     }
 }
