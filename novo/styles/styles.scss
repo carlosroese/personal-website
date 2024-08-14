@@ -1423,4 +1423,25 @@ svg {
             -webkit-transform: scale(392) rotate(-15deg);
         }
     }
+    .about{
+        padding-top: 0;
+        margin: 0 auto;
+        #animatedText{
+            width: 100%;
+            font-size: 7vw;
+            height: auto;
+            background: red;
+        }
+        .freehand{
+            font-size: 6vw;
+            margin-top: 20vh;
+        }
+        .big15Years{
+            .myPicture{
+                right: 0;
+                width: 43vw;
+                height: 56.6vw;
+            }
+        }
+    }
 }

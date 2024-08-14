@@ -312,3 +312,8 @@ const currentYear = new Date().getFullYear();
 
 // Define o texto do elemento p com o ano atual
 currentYearElement.textContent = currentYear;
+
+
+if ($(window).width() < 1023) {
+    
+}
