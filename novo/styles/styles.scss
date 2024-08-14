@@ -1318,7 +1318,7 @@ svg {
 
 @media only screen and (max-width: 1023px) {
     .header {
-        width: calc(100vw - 10vw);
+        width: 90vw;
         left: 5vw;
 
         .logo {
@@ -1416,6 +1416,7 @@ svg {
     }
 
     .startAnimation {
+        width: 100vw;
         .logoSpace {
             transform: scale(0.7) rotate(0deg);
             -webkit-transform: scale(0.7) rotate(0deg);

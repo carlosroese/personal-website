@@ -936,7 +936,7 @@ svg {
 
 @media only screen and (max-width: 1023px) {
   .header {
-    width: calc(100vw - 10vw);
+    width: 90vw;
     left: 5vw; }
     .header .logo {
       width: 70px; }
@@ -992,12 +992,14 @@ svg {
       .hero .smallText .rightActive {
         margin-right: 0; }
 
-  .startAnimation .logoSpace {
-    transform: scale(0.7) rotate(0deg);
-    -webkit-transform: scale(0.7) rotate(0deg); }
-  .startAnimation .logoSpaceActive {
-    transform: scale(392) rotate(-15deg);
-    -webkit-transform: scale(392) rotate(-15deg); }
+  .startAnimation {
+    width: 100vw; }
+    .startAnimation .logoSpace {
+      transform: scale(0.7) rotate(0deg);
+      -webkit-transform: scale(0.7) rotate(0deg); }
+    .startAnimation .logoSpaceActive {
+      transform: scale(392) rotate(-15deg);
+      -webkit-transform: scale(392) rotate(-15deg); }
 
   .about {
     padding-top: 0;
