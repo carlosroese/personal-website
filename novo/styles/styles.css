@@ -984,7 +984,7 @@ svg {
       height: 16vw; }
       .hero .contH2 h2 {
         font-size: 17vw;
-        font-family: "ExtraBold_Narrow";
+        font-family: "Bold_Narrow";
         letter-spacing: -2px;
         margin-top: 18vw; }
         .hero .contH2 h2 span {
@@ -1001,7 +1001,7 @@ svg {
     .hero .defaultCTA {
       margin-top: 4vh; }
     .hero .smallText {
-      bottom: 12vh;
+      top: 68vh;
       margin-top: 0;
       justify-content: center; }
       .hero .smallText p {
