@@ -228,7 +228,7 @@ $(document).ready(function () {
             $('.ctaBreak .defaultCTA').removeClass("defaultCTAActive");
         }
         //Footer Animations
-        if (scrollval >= anchorFooter) {
+        if (scrollval >= 10) {
             var footerTitle1 = function () {
                 $('.bgFooter .headline .box1 h2').addClass("h2ActiveFooter");
             };

@@ -162,44 +162,53 @@ svg {
   .startAnimation .logoSpace {
     width: 350px;
     position: relative;
-    height: 86px;
-    transition: 2.5s;
+    height: 80px;
+    overflow: hidden;
+    transition: 1.8s;
     left: calc(50% - 175px);
     top: calc(50% - 43px);
     will-change: transform;
     image-rendering: optimizeQuality; }
     .startAnimation .logoSpace .pathLeft {
       position: absolute;
-      width: 86px;
-      fill: var(--neon);
+      width: 50%;
+      height: 74%;
       opacity: 0;
       transition: 0.8s;
       left: 0;
+      top: -6%;
       will-change: transform;
-      image-rendering: optimizeQuality; }
+      image-rendering: optimizeQuality;
+      background-image: url(../imagens/c.svg);
+      background-repeat: no-repeat;
+      background-position: left top;
+      object-fit: contain; }
     .startAnimation .logoSpace .pathRight {
       position: absolute;
-      width: 86px;
-      fill: var(--neon);
+      width: 31%;
+      height: 74%;
       right: 0px;
-      top: 22px;
+      top: 25%;
       opacity: 0;
       transition: 0.8s;
       will-change: transform;
-      image-rendering: optimizeQuality; }
+      image-rendering: optimizeQuality;
+      background-image: url(../imagens/r.svg);
+      background-repeat: no-repeat;
+      background-position: left top;
+      object-fit: contain; }
     .startAnimation .logoSpace .pathLeftActive {
       opacity: 1;
-      left: calc(50% - 70px); }
+      left: 31%; }
     .startAnimation .logoSpace .pathRightActive {
       opacity: 1;
-      right: calc(50% - 70px); }
+      right: 25%; }
   .startAnimation .logoSpaceActive {
-    transform: scale(392) rotate(-15deg);
-    -webkit-transform: scale(392) rotate(-15deg);
-    transform-origin: center;
-    -webkit-transform-origin: center;
-    margin-left: 821vh;
-    margin-top: -218vh; }
+    width: 131250px;
+    height: 30000px;
+    left: calc(50% - 59230px);
+    top: calc(50% - 18941px);
+    rotate: -37deg; }
 
 .header {
   width: calc(100vw - (8vw + 8px));
@@ -1010,11 +1019,17 @@ svg {
   .startAnimation {
     width: 100vw; }
     .startAnimation .logoSpace {
-      transform: scale(0.7) rotate(0deg);
-      -webkit-transform: scale(0.7) rotate(0deg); }
+      width: 262px;
+      height: 60px;
+      left: calc(50% - 131px);
+      top: calc(50% - 30px);
+      transition: 2s; }
     .startAnimation .logoSpaceActive {
-      transform: scale(392) rotate(-15deg);
-      -webkit-transform: scale(392) rotate(-15deg); }
+      width: 131250px;
+      height: 30000px;
+      left: calc(50% - 59230px);
+      top: calc(50% - 18941px);
+      rotate: -37deg; }
 
   .about {
     padding-top: 0;

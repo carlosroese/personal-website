@@ -233,8 +233,9 @@ svg {
     .logoSpace {
         width: 350px;
         position: relative;
-        height: 86px;
-        transition: 2.5s;
+        height: 80px;
+        overflow: hidden;
+        transition: 1.8s;
         left: calc(50% - 175px);
         top: calc(50% - 43px);
         will-change: transform;
@@ -242,46 +243,56 @@ svg {
 
         .pathLeft {
             position: absolute;
-            width: 86px;
-            fill: var(--neon);
+            width: 50%;
+            height: 74%;
             opacity: 0;
             transition: 0.8s;
             left: 0;
+            top: -6%;
             will-change: transform;
             image-rendering: optimizeQuality;
+            background-image: url(../imagens/c.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            object-fit: contain;
         }
 
         .pathRight {
             position: absolute;
-            width: 86px;
-            fill: var(--neon);
+            width: 31%;
+            height: 74%;
             right: 0px;
-            top: 22px;
+            top: 25%;
             opacity: 0;
             transition: 0.8s;
             will-change: transform;
             image-rendering: optimizeQuality;
+            background-image: url(../imagens/r.svg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            object-fit: contain;
         }
 
         .pathLeftActive {
             opacity: 1;
-            left: calc(50% - 70px);
+            left: 31%;
         }
 
         .pathRightActive {
             opacity: 1;
-            right: calc(50% - 70px);
+            right: 25%;
         }
 
     }
 
     .logoSpaceActive {
-        transform: scale(392) rotate(-15deg);
-        -webkit-transform: scale(392) rotate(-15deg);
-        transform-origin: center;
-        -webkit-transform-origin: center;
-        margin-left: 821vh;
-        margin-top: -218vh;
+        width: 131250px;
+        height: 30000px;
+        // left: calc(50% - 28840px);
+        // top: calc(50% - 9432px);
+        left: calc(50% - 59230px);
+        top: calc(50% - 18941px);
+        rotate: -37deg;
     }
 }
 
@@ -449,6 +460,7 @@ svg {
     -webkit-font-smoothing: antialiased;
     z-index: 1;
     overflow: hidden;
+
     img {
         height: 10.5vw;
         position: absolute;
@@ -562,6 +574,7 @@ svg {
     position: relative;
     z-index: 1;
     overflow: hidden;
+
     #animatedText {
         font-size: 2.8vw;
         text-transform: uppercase;
@@ -625,6 +638,7 @@ svg {
         height: 22vw;
         z-index: 1;
         margin-left: 4vw;
+
         .myPicture {
             object-position: center;
             object-fit: cover;
@@ -1437,13 +1451,20 @@ svg {
         width: 100vw;
 
         .logoSpace {
-            transform: scale(0.7) rotate(0deg);
-            -webkit-transform: scale(0.7) rotate(0deg);
+            width: 262px;
+            height: 60px;
+            left: calc(50% - 131px);
+            top: calc(50% - 30px);
+            transition: 2s;
         }
-
         .logoSpaceActive {
-            transform: scale(392) rotate(-15deg);
-            -webkit-transform: scale(392) rotate(-15deg);
+            width: 131250px;
+            height: 30000px;
+            // left: calc(50% - 28840px);
+            // top: calc(50% - 9432px);
+            left: calc(50% - 59230px);
+            top: calc(50% - 18941px);
+            rotate: -37deg;
         }
     }
 
@@ -1466,6 +1487,7 @@ svg {
 
         .big15Years {
             margin-left: 5vw;
+
             .myPicture {
                 right: 0;
                 width: 53vw;
@@ -1482,6 +1504,7 @@ svg {
             margin-top: 15vh;
             margin-bottom: 10vh;
             margin-left: 5vw;
+
             p {
                 width: 55vw;
                 font-size: 5vw;
@@ -1696,7 +1719,8 @@ svg {
             div {
                 width: 50%;
                 height: 18vh;
-                img{
+
+                img {
                     width: 60%;
                     height: 23%;
                 }
