@@ -808,7 +808,7 @@ svg {
         h2 {
             text-align: center;
             width: 47vw;
-            line-height: 90%;
+            line-height: 100%;
             margin: 0 auto;
             font-size: 4.5vw;
             font-family: "Black_Narrow";
@@ -1022,7 +1022,6 @@ svg {
                 border: 2px solid var(--neon);
                 position: relative;
                 padding: 3vw;
-
                 &:first-child {
                     border: 0;
                 }
@@ -1062,7 +1061,7 @@ svg {
                 h2 {
                     font-family: "Black_Narrow";
                     font-size: 4.5vw;
-                    line-height: 90%;
+                    line-height: 100%;
                     color: #fff;
                     text-transform: uppercase;
                     width: 80%;
@@ -1103,7 +1102,7 @@ svg {
         height: 12vw;
 
         h2 {
-            line-height: 90%;
+            line-height: 100%;
             margin: 0 auto;
             font-size: 4.5vw;
             font-family: "Black_Narrow";
@@ -1454,7 +1453,7 @@ svg {
             width: 262px;
             height: 60px;
             left: calc(50% - 131px);
-            top: calc(50% - 60px);
+            top: calc(50% - 80px);
             transition: 2s;
         }
         .logoSpaceActive {
