@@ -961,7 +961,8 @@ svg {
 
   .header {
     width: 90vw;
-    left: 5vw; }
+    left: 0;
+    position: relative; }
     .header .logo {
       width: 70px; }
     .header .menus .link {
@@ -972,7 +973,7 @@ svg {
 
   .hero {
     height: 100vh;
-    padding-top: 31vh; }
+    padding-top: 22vh; }
     .hero img {
       height: 35vw;
       left: calc(50% - 17.5vw);
