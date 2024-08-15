@@ -375,4 +375,8 @@ if ($(window).width() < 1023) {
             });
         });
     });
+    $(window).scroll(function () {
+        $(".about .freehandred").css("rotate", (-(scrollval / 100)) + 'deg');
+    });
+
 }

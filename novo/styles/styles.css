@@ -408,7 +408,7 @@ svg {
     margin-left: 4vw;
     transition: opacity 0.3s ease-in-out;
     white-space: pre-wrap;
-    height: 40vh;
+    height: 20vh;
     font-family: "Medium_Narrow";
     -webkit-font-smoothing: antialiased; }
     .about #animatedText span {
@@ -984,7 +984,7 @@ svg {
       height: 16vw; }
       .hero .contH2 h2 {
         font-size: 17vw;
-        font-family: "Bold_Narrow";
+        font-family: "ExtraBold_Narrow";
         letter-spacing: -2px;
         margin-top: 18vw; }
         .hero .contH2 h2 span {
@@ -1023,7 +1023,7 @@ svg {
       width: 262px;
       height: 60px;
       left: calc(50% - 131px);
-      top: calc(50% - 30px);
+      top: calc(50% - 60px);
       transition: 2s; }
     .startAnimation .logoSpaceActive {
       width: 131250px;
@@ -1038,7 +1038,8 @@ svg {
     .about #animatedText {
       width: 90vw;
       font-size: 10vw;
-      margin-left: 5vw; }
+      margin-left: 5vw;
+      height: 40vh; }
     .about .freehand {
       font-size: 6vw;
       margin-top: 20vh;
