@@ -1081,11 +1081,11 @@ svg {
         font-size: 13vw;
         width: 90%;
         font-family: "ExtraBold_Narrow";
-        letter-spacing: -1px; }
+        letter-spacing: -2px; }
       .projects .headline .box {
         padding: 2vw 3vw; }
         .projects .headline .box .freehand {
-          font-size: 7vw; }
+          font-size: 6vw; }
     .projects .grid {
       margin-top: 7vw; }
       .projects .grid a {
@@ -1105,11 +1105,11 @@ svg {
       margin-bottom: 3vh; }
     .ctaBreak .mask {
       width: 100%;
-      height: 17vw; }
+      height: 16vw; }
       .ctaBreak .mask h2 {
-        font-size: 16vw;
+        font-size: 15vw;
         font-family: "ExtraBold_Narrow";
-        letter-spacing: -1px; }
+        letter-spacing: -2px; }
     .ctaBreak .defaultCTA {
       transform: scale(1);
       margin-top: 3vh; }
@@ -1188,7 +1188,7 @@ svg {
       .bgClients .headline h2 {
         font-size: 14vw;
         font-family: "ExtraBold_Narrow";
-        letter-spacing: -1px;
+        letter-spacing: -2px;
         text-align: center; }
       .bgClients .headline .box {
         position: relative;
@@ -1222,7 +1222,7 @@ svg {
         .bgFooter .headline .boxH2 h2 {
           font-size: 16vw;
           font-family: "ExtraBold_Narrow";
-          letter-spacing: -1px;
+          letter-spacing: -2px;
           margin-top: 17vw; }
       .bgFooter .headline .box {
         padding: 2vw 3vw; }
