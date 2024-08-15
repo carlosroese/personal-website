@@ -141,7 +141,12 @@ $(document).ready(function () {
 
         //About Section Animations as you scroll
         $(".about .big15Years .myPicture").css("top", (0 - (scrollval / myPictureSpeed)) + 'px');
-        $(".about .freehandred").css("rotate", (-(scrollval / 200)) + 'deg');
+        if ($(window).width() < 1024) {
+            var freeHandRedSpeed = 250;
+        } else {
+            var freeHandRedSpeed = 200;
+        }
+        $(".about .freehandred").css("rotate", (-(scrollval / freeHandRedSpeed)) + 'deg');
         $(".about .freehandred").css("margin-top", (scrollval / 15) + 'px');
 
         if ($(window).width() < 1024) {
@@ -375,8 +380,4 @@ if ($(window).width() < 1023) {
             });
         });
     });
-    $(window).scroll(function () {
-        $(".about .freehandred").css("rotate", (-(scrollval / 100)) + 'deg');
-    });
-
 }
