@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "NutriTrack",
+    "slug": "nutritrack",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nutritrack.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Precisamos da câmera para identificar os alimentos.",
+        "NSPhotoLibraryUsageDescription": "Precisamos da galeria para analisar fotos de alimentos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0A"
+      },
+      "package": "com.nutritrack.app",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "ANTHROPIC_API_KEY": "",
+      "GOOGLE_CLIENT_ID": "",
+      "FACEBOOK_APP_ID": "",
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Precisamos da galeria para analisar fotos de alimentos.",
+          "cameraPermission": "Precisamos da câmera para identificar os alimentos."
+        }
+      ]
+    ]
+  }
+}
