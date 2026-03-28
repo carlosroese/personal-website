@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriTrack — Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0A0A0A; --surface: #141414; --elevated: #1E1E1E;
+    --border: #2A2A2A; --primary: #C2FF42; --accent: #FB4E4E;
+    --text: #FFFFFF; --muted: #888888; --dimmed: #444444;
+    --carbs: #4ECDC4; --protein: #C2FF42; --fat: #FB4E4E; --kcal: #FFD166;
+  }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 40px 20px; gap: 40px; flex-wrap: wrap; }
+
+  .device { width: 375px; background: var(--bg); border-radius: 44px; border: 2px solid #333; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.8); position: relative; height: 812px; display: flex; flex-direction: column; }
+  .device-bar { height: 44px; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .notch { width: 120px; height: 28px; background: #000; border-radius: 0 0 20px 20px; }
+  .screen { flex: 1; overflow: hidden; position: relative; }
+
+  .page { position: absolute; inset: 0; overflow-y: auto; display: none; flex-direction: column; }
+  .page.active { display: flex; }
+
+  /* ===== LOGIN ===== */
+  .login-scroll { padding: 40px 24px; flex: 1; }
+  .logo-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 48px; }
+  .logo-icon { width: 80px; height: 80px; border-radius: 24px; background: linear-gradient(135deg, var(--primary), #9ECC35); display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 16px; }
+  .app-name { font-size: 32px; font-weight: 800; }
+  .app-tag { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .section-label { font-size: 12px; color: var(--muted); text-align: center; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 14px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; margin-bottom: 12px; transition: opacity .15s; }
+  .social-btn:hover { opacity: 0.85; }
+  .google-btn { background: #fff; color: #1a1a1a; }
+  .google-icon { font-size: 20px; font-weight: 700; color: #4285F4; }
+  .fb-btn { background: #1877F2; color: #fff; }
+  .fb-icon { font-size: 22px; font-weight: 800; }
+  .divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-txt { font-size: 13px; color: var(--muted); }
+  .email-btn { display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 14px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; margin-bottom: 40px; transition: background .15s; }
+  .email-btn:hover { background: rgba(194,255,66,0.08); }
+  .features { display: flex; flex-direction: column; gap: 14px; }
+  .feature-row { display: flex; align-items: center; gap: 12px; }
+  .feature-icon { font-size: 22px; }
+  .feature-text { font-size: 14px; color: var(--muted); }
+
+  /* ===== REGISTER ===== */
+  .register-scroll { padding: 16px 24px 40px; flex: 1; }
+  .back-btn { color: var(--primary); font-size: 15px; font-weight: 500; cursor: pointer; margin-bottom: 24px; display: inline-block; }
+  .page-title { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+  .page-subtitle { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+  .form { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .field input { background: var(--elevated); border: 1px solid var(--border); border-radius: 12px; height: 50px; padding: 0 16px; font-size: 15px; color: var(--text); outline: none; transition: border-color .15s; }
+  .field input:focus { border-color: var(--primary); }
+  .field input::placeholder { color: var(--dimmed); }
+  .primary-btn { height: 52px; border-radius: 14px; background: var(--primary); color: #0A0A0A; font-size: 16px; font-weight: 700; border: none; cursor: pointer; width: 100%; transition: opacity .15s; }
+  .primary-btn:hover { opacity: 0.9; }
+  .terms { font-size: 12px; color: var(--muted); text-align: center; line-height: 18px; margin-top: 16px; }
+  .terms span { color: var(--primary); }
+
+  /* ===== PROFILE SETUP ===== */
+  .profile-scroll { padding: 32px 24px 40px; flex: 1; }
+  .profile-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 36px; }
+  .profile-avatar { width: 80px; height: 80px; border-radius: 40px; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 800; color: #0A0A0A; margin-bottom: 16px; border: 3px solid var(--primary); }
+  .profile-greeting { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .profile-sub { font-size: 14px; color: var(--muted); text-align: center; line-height: 20px; }
+  .row { display: flex; gap: 12px; }
+  .gender-row { display: flex; gap: 10px; }
+  .gender-opt { flex: 1; background: var(--elevated); border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; transition: all .15s; }
+  .gender-opt:hover, .gender-opt.selected { border-color: var(--primary); background: rgba(194,255,66,0.08); }
+  .gender-emoji { font-size: 24px; }
+  .gender-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .gender-opt.selected .gender-label { color: var(--primary); font-weight: 700; }
+  .bmi-card { background: var(--elevated); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin: 20px 0; }
+  .bmi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .bmi-row { display: flex; align-items: center; gap: 12px; }
+  .bmi-val { font-size: 28px; font-weight: 800; }
+  .bmi-class { font-size: 14px; font-weight: 600; color: #4CAF50; }
+
+  /* ===== CHAT ===== */
+  .chat-page { display: none; flex-direction: column; height: 100%; }
+  .chat-page.active { display: flex; }
+  .chat-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
+  .chat-header-left { display: flex; align-items: center; gap: 10px; }
+  .chat-bot-icon { width: 40px; height: 40px; border-radius: 12px; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  .chat-title { font-size: 16px; font-weight: 700; }
+  .chat-subtitle { font-size: 11px; color: var(--muted); }
+  .chat-user-avatar { width: 36px; height: 36px; border-radius: 18px; background: var(--elevated); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--primary); cursor: pointer; }
+  .messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .msg-row { display: flex; align-items: flex-end; gap: 8px; }
+  .msg-row.user { flex-direction: row-reverse; }
+  .bot-icon { width: 32px; height: 32px; border-radius: 10px; background: var(--surface); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .bubble { max-width: 80%; border-radius: 16px; padding: 12px; font-size: 14px; line-height: 20px; }
+  .bubble.bot { background: var(--elevated); border-bottom-left-radius: 4px; color: var(--text); }
+  .bubble.user { background: var(--primary); border-bottom-right-radius: 4px; color: #0A0A0A; font-weight: 500; }
+  .bubble strong { font-weight: 700; }
+  .bubble .primary-text { color: var(--primary); font-weight: 700; }
+  .nutrition-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill { border-radius: 8px; border-width: 1.5px; border-style: solid; padding: 4px 8px; display: flex; flex-direction: column; align-items: center; min-width: 52px; }
+  .pill-val { font-size: 13px; font-weight: 700; }
+  .pill-lbl { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .chat-input-area { display: flex; align-items: flex-end; padding: 12px; border-top: 1px solid var(--border); background: var(--surface); gap: 8px; flex-shrink: 0; }
+  .cam-btn { width: 44px; height: 44px; border-radius: 12px; background: var(--elevated); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; flex-shrink: 0; }
+  .chat-input { flex: 1; background: var(--elevated); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; font-size: 14px; color: var(--text); outline: none; resize: none; max-height: 80px; font-family: inherit; transition: border-color .15s; }
+  .chat-input:focus { border-color: var(--primary); }
+  .chat-input::placeholder { color: var(--dimmed); }
+  .send-btn { width: 44px; height: 44px; border-radius: 12px; background: var(--primary); border: none; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #0A0A0A; cursor: pointer; flex-shrink: 0; transition: opacity .15s; }
+  .send-btn:hover { opacity: 0.85; }
+  .typing-bubble { display: flex; align-items: center; gap: 6px; padding: 12px; background: var(--elevated); border-radius: 16px; border-bottom-left-radius: 4px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); animation: bounce 1.2s infinite; }
+  .dot:nth-child(2) { animation-delay: .2s; }
+  .dot:nth-child(3) { animation-delay: .4s; }
+  @keyframes bounce { 0%,80%,100%{transform:scale(.6);opacity:.4} 40%{transform:scale(1);opacity:1} }
+
+  /* ===== SIDEBAR INFO ===== */
+  .info-panel { max-width: 320px; padding: 24px 0; }
+  .info-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .info-sub { font-size: 14px; color: var(--muted); margin-bottom: 32px; line-height: 20px; }
+  .flow-step { display: flex; gap: 14px; margin-bottom: 24px; align-items: flex-start; }
+  .step-num { width: 32px; height: 32px; border-radius: 10px; background: var(--primary); color: #0A0A0A; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-info h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .step-info p { font-size: 13px; color: var(--muted); line-height: 18px; }
+  .nav-btns { display: flex; gap: 10px; margin-top: 32px; flex-wrap: wrap; }
+  .nav-btn { padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border); background: transparent; color: var(--muted); font-size: 13px; cursor: pointer; transition: all .15s; }
+  .nav-btn:hover, .nav-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(194,255,66,0.08); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<!-- Info Panel -->
+<div class="info-panel">
+  <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">NutriTrack App</p>
+  <h1 class="info-title">Prévia interativa</h1>
+  <p class="info-sub">Clique nos botões abaixo para navegar entre as telas do app.</p>
+
+  <h2>Fluxo do app</h2>
+  <div class="flow-step">
+    <div class="step-num">1</div>
+    <div class="step-info"><h3>Login</h3><p>Google, Facebook ou e-mail. Cadastro rápido em uma tela.</p></div>
+  </div>
+  <div class="flow-step">
+    <div class="step-num">2</div>
+    <div class="step-info"><h3>Cadastro</h3><p>Formulário simples com nome, e-mail e senha.</p></div>
+  </div>
+  <div class="flow-step">
+    <div class="step-num">3</div>
+    <div class="step-info"><h3>Perfil</h3><p>Idade, altura, peso e gênero. IMC calculado em tempo real.</p></div>
+  </div>
+  <div class="flow-step">
+    <div class="step-num">4</div>
+    <div class="step-info"><h3>Chat</h3><p>Digite os alimentos ou envie uma foto. A IA retorna os valores nutricionais.</p></div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="nav-btn active" onclick="showPage('login')">① Login</button>
+    <button class="nav-btn" onclick="showPage('register')">② Cadastro</button>
+    <button class="nav-btn" onclick="showPage('profile')">③ Perfil</button>
+    <button class="nav-btn" onclick="showPage('chat')">④ Chat</button>
+  </div>
+</div>
+
+<!-- Device -->
+<div class="device">
+  <div class="device-bar"><div class="notch"></div></div>
+  <div class="screen">
+
+    <!-- LOGIN -->
+    <div id="page-login" class="page active">
+      <div class="login-scroll">
+        <div class="logo-wrap">
+          <div class="logo-icon">🥗</div>
+          <div class="app-name">NutriTrack</div>
+          <div class="app-tag">Seu assistente nutricional inteligente</div>
+        </div>
+        <div class="section-label">Entrar com</div>
+        <button class="social-btn google-btn" onclick="showPage('profile')">
+          <span class="google-icon">G</span> Continuar com Google
+        </button>
+        <button class="social-btn fb-btn" onclick="showPage('profile')">
+          <span class="fb-icon">f</span> Continuar com Facebook
+        </button>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <span class="divider-txt">ou</span>
+          <div class="divider-line"></div>
+        </div>
+        <button class="email-btn" onclick="showPage('register')">Cadastrar com e-mail</button>
+        <div class="features">
+          <div class="feature-row"><span class="feature-icon">💬</span><span class="feature-text">Chat inteligente de nutrição</span></div>
+          <div class="feature-row"><span class="feature-icon">📸</span><span class="feature-text">Análise nutricional por foto</span></div>
+          <div class="feature-row"><span class="feature-icon">🎯</span><span class="feature-text">Resultados precisos com IA</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="page-register" class="page">
+      <div class="register-scroll">
+        <span class="back-btn" onclick="showPage('login')">← Voltar</span>
+        <div class="page-title">Criar conta</div>
+        <div class="page-subtitle">Informe seus dados para começar</div>
+        <div class="form">
+          <div class="field"><label>Nome completo</label><input type="text" placeholder="Seu nome" value="Carlos Roese"></div>
+          <div class="field"><label>E-mail</label><input type="email" placeholder="seu@email.com" value="carlos@exemplo.com"></div>
+          <div class="field"><label>Senha</label><input type="password" placeholder="Mínimo 6 caracteres" value="••••••••"></div>
+          <div class="field"><label>Confirmar senha</label><input type="password" placeholder="Repita a senha" value="••••••••"></div>
+        </div>
+        <button class="primary-btn" onclick="showPage('profile')">Criar conta</button>
+        <div class="terms">Ao criar conta, você concorda com nossos <span>Termos de Uso</span> e <span>Política de Privacidade</span>.</div>
+      </div>
+    </div>
+
+    <!-- PROFILE SETUP -->
+    <div id="page-profile" class="page">
+      <div class="profile-scroll">
+        <div class="profile-header">
+          <div class="profile-avatar">C</div>
+          <div class="profile-greeting">Olá, Carlos! 👋</div>
+          <div class="profile-sub">Precisamos de algumas informações<br>para personalizar sua experiência.</div>
+        </div>
+        <div class="form">
+          <div class="field"><label>Idade</label><input type="number" placeholder="Ex: 28" id="age" oninput="updateBMI()" value="32"></div>
+          <div class="row">
+            <div class="field" style="flex:1"><label>Altura (cm)</label><input type="number" placeholder="Ex: 175" id="height" oninput="updateBMI()" value="178"></div>
+            <div class="field" style="flex:1"><label>Peso (kg)</label><input type="number" placeholder="Ex: 70" id="weight" oninput="updateBMI()" value="75"></div>
+          </div>
+          <div class="field">
+            <label>Gênero</label>
+            <div class="gender-row">
+              <div class="gender-opt selected" onclick="selectGender(this)"><span class="gender-emoji">👨</span><span class="gender-label">Masculino</span></div>
+              <div class="gender-opt" onclick="selectGender(this)"><span class="gender-emoji">👩</span><span class="gender-label">Feminino</span></div>
+              <div class="gender-opt" onclick="selectGender(this)"><span class="gender-emoji">🧑</span><span class="gender-label">Outro</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="bmi-card" id="bmi-card">
+          <div class="bmi-label">IMC Estimado</div>
+          <div class="bmi-row">
+            <span class="bmi-val" id="bmi-val">23.7</span>
+            <span class="bmi-class" id="bmi-class">Peso normal</span>
+          </div>
+        </div>
+        <button class="primary-btn" onclick="showPage('chat')">Começar a usar →</button>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div id="page-chat" class="page chat-page">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-bot-icon">🥗</div>
+          <div><div class="chat-title">NutriTrack</div><div class="chat-subtitle">Assistente nutricional</div></div>
+        </div>
+        <div class="chat-user-avatar" onclick="showPage('login')">C</div>
+      </div>
+      <div class="messages" id="messages">
+        <div class="msg-row">
+          <div class="bot-icon">🥗</div>
+          <div class="bubble bot">Olá! 👋 Eu sou seu assistente nutricional.<br><br>Você pode:<br>• Digitar os alimentos com o peso<br>• Enviar uma foto 📸 do seu prato<br><br>Como posso ajudar?</div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="cam-btn" onclick="simulatePhoto()">📷</div>
+        <textarea class="chat-input" id="chatInput" placeholder="Ex: 150g de frango, 200g de arroz..." rows="1" onkeydown="handleKey(event)"></textarea>
+        <button class="send-btn" onclick="sendMessage()">→</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach((b, i) => {
+    const pages = ['login','register','profile','chat'];
+    b.classList.toggle('active', pages[i] === name);
+  });
+}
+
+function selectGender(el) {
+  document.querySelectorAll('.gender-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function updateBMI() {
+  const h = parseFloat(document.getElementById('height').value);
+  const w = parseFloat(document.getElementById('weight').value);
+  if (!h || !w || h < 50 || w < 10) return;
+  const bmi = w / Math.pow(h/100, 2);
+  document.getElementById('bmi-val').textContent = bmi.toFixed(1);
+  let cls = '', color = '';
+  if (bmi < 18.5) { cls = 'Abaixo do peso'; color = '#FF9800'; }
+  else if (bmi < 25) { cls = 'Peso normal'; color = '#4CAF50'; }
+  else if (bmi < 30) { cls = 'Sobrepeso'; color = '#FF9800'; }
+  else { cls = 'Obesidade'; color = '#FB4E4E'; }
+  const el = document.getElementById('bmi-class');
+  el.textContent = cls;
+  el.style.color = color;
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+
+function addMessage(html, isUser) {
+  const msgs = document.getElementById('messages');
+  const row = document.createElement('div');
+  row.className = 'msg-row' + (isUser ? ' user' : '');
+  if (!isUser) row.innerHTML = '<div class="bot-icon">🥗</div>';
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble ' + (isUser ? 'user' : 'bot');
+  bubble.innerHTML = html;
+  row.appendChild(bubble);
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
+  return row;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('messages');
+  const row = document.createElement('div');
+  row.className = 'msg-row';
+  row.id = 'typing';
+  row.innerHTML = '<div class="bot-icon">🥗</div><div class="typing-bubble"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typing');
+  if (t) t.remove();
+}
+
+const DEMO_RESPONSES = {
+  default: (food) => `<strong>${food || 'Alimentos analisados'}</strong><br><br>` +
+    `• Carboidratos: <span class="primary-text">42.5g</span><br>` +
+    `• Proteínas: <span class="primary-text">35.2g</span><br>` +
+    `• Gorduras: <span class="primary-text">8.3g</span><br>` +
+    `• Calorias: <span class="primary-text">387 kcal</span>` +
+    `<div class="nutrition-pills">` +
+    `<div class="pill" style="border-color:#4ECDC4"><span class="pill-val" style="color:#4ECDC4">42.5g</span><span class="pill-lbl">Carbs</span></div>` +
+    `<div class="pill" style="border-color:#C2FF42"><span class="pill-val" style="color:#C2FF42">35.2g</span><span class="pill-lbl">Prot</span></div>` +
+    `<div class="pill" style="border-color:#FB4E4E"><span class="pill-val" style="color:#FB4E4E">8.3g</span><span class="pill-lbl">Gord</span></div>` +
+    `<div class="pill" style="border-color:#FFD166"><span class="pill-val" style="color:#FFD166">387</span><span class="pill-lbl">Kcal</span></div>` +
+    `</div>`
+};
+
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMessage(text, true);
+  addTyping();
+  setTimeout(() => {
+    removeTyping();
+    addMessage(DEMO_RESPONSES.default(text), false);
+  }, 1800);
+}
+
+function simulatePhoto() {
+  addMessage('📸 Foto enviada para análise', true);
+  addTyping();
+  setTimeout(() => {
+    removeTyping();
+    addMessage(
+      `📸 <strong>Alimentos identificados na imagem:</strong><br><br>` +
+      `<strong>Arroz branco cozido</strong> (peso estimado) — 200g<br>` +
+      `• Carboidratos: 55.2g • Proteínas: 3.8g • Gorduras: 0.4g • Cal: 238 kcal<br><br>` +
+      `<strong>Frango grelhado</strong> (peso estimado) — 150g<br>` +
+      `• Carboidratos: 0g • Proteínas: 42.0g • Gorduras: 4.5g • Cal: 213 kcal<br><br>` +
+      `─────────────────<br><strong>Total</strong><br>` +
+      `<div class="nutrition-pills">` +
+      `<div class="pill" style="border-color:#4ECDC4"><span class="pill-val" style="color:#4ECDC4">55.2g</span><span class="pill-lbl">Carbs</span></div>` +
+      `<div class="pill" style="border-color:#C2FF42"><span class="pill-val" style="color:#C2FF42">45.8g</span><span class="pill-lbl">Prot</span></div>` +
+      `<div class="pill" style="border-color:#FB4E4E"><span class="pill-val" style="color:#FB4E4E">4.9g</span><span class="pill-lbl">Gord</span></div>` +
+      `<div class="pill" style="border-color:#FFD166"><span class="pill-val" style="color:#FFD166">451</span><span class="pill-lbl">Kcal</span></div>` +
+      `</div>`,
+      false
+    );
+  }, 2200);
+}
+
+updateBMI();
+</script>
+</body>
+</html>
